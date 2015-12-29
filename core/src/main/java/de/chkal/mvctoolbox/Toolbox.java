@@ -1,6 +1,9 @@
 package de.chkal.mvctoolbox;
 
+import de.chkal.mvctoolbox.message.Messages;
+
 import javax.enterprise.context.ApplicationScoped;
+import javax.inject.Inject;
 import javax.inject.Named;
 
 /**
@@ -11,5 +14,12 @@ import javax.inject.Named;
 @Named
 @ApplicationScoped
 public class Toolbox {
+
+  @Inject
+  private Messages messages;
+
+  public Messages getMessages() {
+    return messages;
+  }
 
 }
