@@ -23,6 +23,13 @@
       <scope>provided</scope>
     </dependency>
 
+    <dependency>
+      <groupId>javax.enterprise</groupId>
+      <artifactId>cdi-api</artifactId>
+      <version>${cdi.spec.version}</version>
+      <scope>provided</scope>
+    </dependency>
+
   </dependencies>
 
 </project>
