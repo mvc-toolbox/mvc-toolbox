@@ -79,6 +79,13 @@
       <version>${project.version}</version>
     </dependency>
 
+    <!-- Some styling -->
+    <dependency>
+      <groupId>org.webjars.bower</groupId>
+      <artifactId>bootstrap</artifactId>
+      <version>3.3.6</version>
+    </dependency>
+
   </dependencies>
 
 </project>
