@@ -1,6 +1,6 @@
-package de.chkal.mvctoolbox;
+package de.chkal.mvctoolbox.core;
 
-import de.chkal.mvctoolbox.message.Messages;
+import de.chkal.mvctoolbox.core.message.Messages;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;

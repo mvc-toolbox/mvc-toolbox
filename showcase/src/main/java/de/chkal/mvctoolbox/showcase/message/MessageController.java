@@ -1,6 +1,6 @@
 package de.chkal.mvctoolbox.showcase.message;
 
-import de.chkal.mvctoolbox.message.Messages;
+import de.chkal.mvctoolbox.core.message.Messages;
 
 import javax.inject.Inject;
 import javax.mvc.annotation.Controller;

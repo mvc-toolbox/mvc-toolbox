@@ -1,4 +1,4 @@
-package de.chkal.mvctoolbox.message;
+package de.chkal.mvctoolbox.core.message;
 
 import javax.mvc.annotation.RedirectScoped;
 import javax.mvc.binding.BindingResult;

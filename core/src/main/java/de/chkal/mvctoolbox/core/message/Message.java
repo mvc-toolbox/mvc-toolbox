@@ -1,4 +1,4 @@
-package de.chkal.mvctoolbox.message;
+package de.chkal.mvctoolbox.core.message;
 
 import java.io.Serializable;
 import java.util.Objects;

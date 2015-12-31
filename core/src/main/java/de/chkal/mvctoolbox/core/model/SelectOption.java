@@ -1,4 +1,4 @@
-package de.chkal.mvctoolbox.model;
+package de.chkal.mvctoolbox.core.model;
 
 import java.io.Serializable;
 import java.util.Objects;
