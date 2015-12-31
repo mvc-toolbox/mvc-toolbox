@@ -78,6 +78,11 @@
       <artifactId>mvc-toolbox-core</artifactId>
       <version>${project.version}</version>
     </dependency>
+    <dependency>
+      <groupId>de.chkal.mvc-toolbox</groupId>
+      <artifactId>mvc-toolbox-jsp</artifactId>
+      <version>${project.version}</version>
+    </dependency>
 
     <!-- Some styling -->
     <dependency>
