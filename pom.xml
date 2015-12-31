@@ -21,6 +21,7 @@
 
   <modules>
     <module>core</module>
+    <module>showcase</module>
   </modules>
 
   <licenses>
