@@ -18,6 +18,24 @@ Add the following dependency to your `pom.xml`:
 </dependency>
 ```
 
+You will also have to add the [Sonatype OSS Repository](https://oss.sonatype.org/)
+to your `pom.xml` to get the snapshots:
+
+```xml
+<repositories>
+  <repository>
+    <id>sonatype-oss-snapshots</id>
+    <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+    <releases>
+      <enabled>false</enabled>
+    </releases>
+    <snapshots>
+      <enabled>true</enabled>
+    </snapshots>
+  </repository>
+</repositories>
+```
+
 ## Documentation
 
 ### Message support
