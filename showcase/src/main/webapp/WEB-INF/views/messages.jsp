@@ -4,7 +4,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <title>MVC Toolbox - Messages</title>
+    <title>MVC Toolbox - Message support</title>
     <link href="${mvc.contextPath}/webjars/bootstrap/3.3.6/dist/css/bootstrap.css" rel="stylesheet">
   </head>
   <body>
