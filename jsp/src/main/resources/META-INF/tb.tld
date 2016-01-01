@@ -9,4 +9,18 @@
   <short-name>tb</short-name>
   <uri>http://chkal.de/mvc/toolbox</uri>
 
+  <tag>
+    <description>Renders a HTML checkbox</description>
+    <name>checkbox</name>
+    <tag-class>de.chkal.mvctoolbox.jsp.CheckboxTag</tag-class>
+    <body-content>empty</body-content>
+    <attribute>
+      <description>The current value of the checkbox</description>
+      <name>model</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <dynamic-attributes>true</dynamic-attributes>
+  </tag>
+
 </taglib>
