@@ -103,13 +103,11 @@ you could for example use something like this to display info messages:
 
 ```html
 <c:if test="${not empty toolbox.messages.infos}">
-  <div class="alert alert-success" role="alert">
-    <ul class="list-unstyled">
-      <c:forEach var="message" items="${toolbox.messages.infos}">
-        <li>${mvc.encoders.html(message.text)}</li>
-      </c:forEach>
-    </ul>
-  </div>
+  <ul class="list-unstyled alert alert-success">
+    <c:forEach var="message" items="${toolbox.messages.infos}">
+      <li>${mvc.encoders.html(message.text)}</li>
+    </c:forEach>
+  </ul>
 </c:if>
 ```
 
