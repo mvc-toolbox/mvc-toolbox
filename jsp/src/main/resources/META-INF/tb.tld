@@ -12,7 +12,7 @@
   <tag>
     <description>Renders a HTML checkbox</description>
     <name>checkbox</name>
-    <tag-class>de.chkal.mvctoolbox.jsp.CheckboxTag</tag-class>
+    <tag-class>de.chkal.mvctoolbox.jsp.tag.CheckboxTag</tag-class>
     <body-content>empty</body-content>
     <attribute>
       <description>The current value of the checkbox</description>

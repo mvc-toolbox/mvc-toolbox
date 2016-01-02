@@ -1,4 +1,6 @@
-package de.chkal.mvctoolbox.jsp;
+package de.chkal.mvctoolbox.jsp.tag;
+
+import de.chkal.mvctoolbox.jsp.HtmlWriter;
 
 import javax.servlet.jsp.JspException;
 import javax.servlet.jsp.tagext.DynamicAttributes;
