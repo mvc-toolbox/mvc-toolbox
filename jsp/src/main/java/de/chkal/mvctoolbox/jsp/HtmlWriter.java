@@ -42,4 +42,20 @@ public class HtmlWriter {
     return this;
   }
 
+  public HtmlWriter endStartTag() throws IOException {
+    writer.write(">");
+    return this;
+  }
+
+  public HtmlWriter endTag(String name) throws IOException {
+    writer.write("</");
+    writer.write(name);
+    writer.write(">");
+    return this;
+  }
+
+  public HtmlWriter write(String text) throws IOException {
+    writer.write(text);
+    return this;
+  }
 }

@@ -10,6 +10,14 @@
   <uri>http://chkal.de/mvc/toolbox</uri>
 
   <tag>
+    <description>Renders a messages</description>
+    <name>messages</name>
+    <tag-class>de.chkal.mvctoolbox.jsp.tag.MessagesTag</tag-class>
+    <body-content>empty</body-content>
+    <dynamic-attributes>true</dynamic-attributes>
+  </tag>
+
+  <tag>
     <description>Renders a HTML checkbox</description>
     <name>checkbox</name>
     <tag-class>de.chkal.mvctoolbox.jsp.tag.CheckboxTag</tag-class>
