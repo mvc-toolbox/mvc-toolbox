@@ -1,12 +1,12 @@
 package de.chkal.mvctoolbox.jsp.tag;
 
-import de.chkal.mvctoolbox.jsp.DynamicAttributesTag;
+import de.chkal.mvctoolbox.jsp.DynamicBaseTag;
 import de.chkal.mvctoolbox.jsp.HtmlWriter;
 
 import javax.servlet.jsp.JspException;
 import java.io.IOException;
 
-public class CheckboxTag extends DynamicAttributesTag {
+public class CheckboxTag extends DynamicBaseTag {
 
   private Boolean model;
 

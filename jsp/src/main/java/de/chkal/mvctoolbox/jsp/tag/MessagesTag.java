@@ -2,18 +2,16 @@ package de.chkal.mvctoolbox.jsp.tag;
 
 import de.chkal.mvctoolbox.core.message.Message;
 import de.chkal.mvctoolbox.core.message.Messages;
-import de.chkal.mvctoolbox.jsp.DynamicAttributesTag;
+import de.chkal.mvctoolbox.jsp.BaseTag;
 import de.chkal.mvctoolbox.jsp.HtmlWriter;
 
-import javax.enterprise.inject.spi.CDI;
 import javax.servlet.jsp.JspException;
-import javax.servlet.jsp.tagext.SimpleTagSupport;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class MessagesTag extends SimpleTagSupport {
+public class MessagesTag extends BaseTag {
 
   private boolean grouping;
 
@@ -30,7 +28,7 @@ public class MessagesTag extends SimpleTagSupport {
 
     HtmlWriter writer = new HtmlWriter(getJspContext());
 
-    Messages messages = getMessages();
+    Messages messages = getBean(Messages.class);
 
     if (grouping) {
       renderList(writer, messages.getInfos(), infoClass);
@@ -76,10 +74,6 @@ public class MessagesTag extends SimpleTagSupport {
     writer.beginStartTag("li").endStartTag();
     writer.write(message.getText());
     writer.endTag("li");
-  }
-
-  public Messages getMessages() {
-    return CDI.current().select(Messages.class).get();
   }
 
   public void setGrouping(boolean grouping) {

@@ -1,14 +1,13 @@
 package de.chkal.mvctoolbox.jsp.tag;
 
-import de.chkal.mvctoolbox.jsp.DynamicAttributesTag;
+import de.chkal.mvctoolbox.jsp.DynamicBaseTag;
 import de.chkal.mvctoolbox.jsp.HtmlWriter;
 
-import javax.enterprise.inject.spi.CDI;
 import javax.mvc.MvcContext;
 import javax.servlet.jsp.JspException;
 import java.io.IOException;
 
-public class FormTag extends DynamicAttributesTag {
+public class FormTag extends DynamicBaseTag {
 
   private String action;
 
@@ -17,7 +16,7 @@ public class FormTag extends DynamicAttributesTag {
 
     HtmlWriter writer = new HtmlWriter(getJspContext());
 
-    MvcContext mvcContext = getMvcContext();
+    MvcContext mvcContext = getBean(MvcContext.class);
 
     writer.beginStartTag("form");
     writer.attribute("action", mvcContext.getBasePath() + action);
@@ -28,10 +27,6 @@ public class FormTag extends DynamicAttributesTag {
 
     writer.endTag("form");
 
-  }
-
-  public MvcContext getMvcContext() {
-    return CDI.current().select(MvcContext.class).get();
   }
 
   public void setAction(String action) {
