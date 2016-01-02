@@ -13,26 +13,32 @@
 
       <h1>HTML Checkbox</h1>
 
-      <form>
+      <tb:messages styleClass="list-unstyled alert alert-success"/>
+
+      <tb:form action="/checkbox" method="POST">
+
         <div class="checkbox">
           <label>
-            <tb:checkbox model="${form.checkbox1}"/>
-            <code>&lt;tb:checkbox model="\${form.checkbox1}"/&gt; &lt;!-- Value: null --&gt;</code>
+            <tb:checkbox name="checkbox1" model="${form.checkbox1}" value="true"/>
+            <code>&lt;tb:checkbox name="checkbox1" model="\${form.checkbox1}" value="true"/&gt; &lt;!-- Value: null --&gt;</code>
           </label>
         </div>
         <div class="checkbox">
           <label>
-            <tb:checkbox model="${form.checkbox2}"/>
-            <code>&lt;tb:checkbox model="\${form.checkbox2}"/&gt; &lt;!-- Value: true --&gt;</code>
+            <tb:checkbox name="checkbox2" model="${form.checkbox2}" value="true"/>
+            <code>&lt;tb:checkbox name="checkbox2" model="\${form.checkbox2}" value="true"/&gt; &lt;!-- Value: true --&gt;</code>
           </label>
         </div>
         <div class="checkbox">
           <label>
-            <tb:checkbox model="${form.checkbox3}"/>
-            <code>&lt;tb:checkbox model="\${form.checkbox3}"/&gt; &lt;!-- Value: false --&gt;</code>
+            <tb:checkbox name="checkbox3" model="${form.checkbox3}" value="true"/>
+            <code>&lt;tb:checkbox name="checkbox3" model="\${form.checkbox3}" value="true"/&gt; &lt;!-- Value: false --&gt;</code>
           </label>
         </div>
-      </form>
+
+        <button type="submit" class="btn btn-success">Submit</button>
+
+      </tb:form>
 
       <p style="margin-top: 10px">
         <a href="${mvc.contextPath}/">Back to index</a>
