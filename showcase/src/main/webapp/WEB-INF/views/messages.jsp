@@ -16,9 +16,9 @@
       <tb:messages grouping="true" styleClass="list-unstyled alert" infoClass="alert-success"
                    warningClass="alert-warning" errorClass="alert-danger"/>
 
-      <form action="${mvc.basePath}/messages" method="POST">
+      <tb:form action="/messages" method="POST">
         <button type="submit" class="btn btn-primary">Show me some messages!</button>
-      </form>
+      </tb:form>
 
       <p style="margin-top: 10px">
         <a href="${mvc.contextPath}/">Back to index</a>

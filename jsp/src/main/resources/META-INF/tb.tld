@@ -47,6 +47,20 @@
   </tag>
 
   <tag>
+    <description>Renders a HTML form</description>
+    <name>form</name>
+    <tag-class>de.chkal.mvctoolbox.jsp.tag.FormTag</tag-class>
+    <body-content>scriptless</body-content>
+    <attribute>
+      <description>The action URL relative to the application path</description>
+      <name>action</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <dynamic-attributes>true</dynamic-attributes>
+  </tag>
+
+  <tag>
     <description>Renders a HTML checkbox</description>
     <name>checkbox</name>
     <tag-class>de.chkal.mvctoolbox.jsp.tag.CheckboxTag</tag-class>
