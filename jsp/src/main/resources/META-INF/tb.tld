@@ -14,7 +14,36 @@
     <name>messages</name>
     <tag-class>de.chkal.mvctoolbox.jsp.tag.MessagesTag</tag-class>
     <body-content>empty</body-content>
-    <dynamic-attributes>true</dynamic-attributes>
+    <attribute>
+      <description>Renders separate lists for each severity</description>
+      <name>grouping</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <description>Style class added to the list</description>
+      <name>styleClass</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <description>In grouping mode this class is added to the list containing info messages</description>
+      <name>infoClass</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <description>In grouping mode this class is added to the list containing warning messages</description>
+      <name>warningClass</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <description>In grouping mode this class is added to the list containing error messages</description>
+      <name>errorClass</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
   </tag>
 
   <tag>

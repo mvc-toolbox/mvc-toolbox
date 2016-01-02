@@ -7,10 +7,23 @@ import de.chkal.mvctoolbox.jsp.HtmlWriter;
 
 import javax.enterprise.inject.spi.CDI;
 import javax.servlet.jsp.JspException;
+import javax.servlet.jsp.tagext.SimpleTagSupport;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
-public class MessagesTag extends DynamicAttributesTag {
+public class MessagesTag extends SimpleTagSupport {
+
+  private boolean grouping;
+
+  private String infoClass;
+
+  private String styleClass;
+
+  private String warningClass;
+
+  private String errorClass;
 
   @Override
   public void doTag() throws JspException, IOException {
@@ -19,19 +32,43 @@ public class MessagesTag extends DynamicAttributesTag {
 
     Messages messages = getMessages();
 
-    renderList(writer, messages.getInfos());
-    renderList(writer, messages.getWarnings());
-    renderList(writer, messages.getErrors());
+    if (grouping) {
+      renderList(writer, messages.getInfos(), infoClass);
+      renderList(writer, messages.getWarnings(), warningClass);
+      renderList(writer, messages.getErrors(), errorClass);
+    } else {
+      renderList(writer, messages.getAll(), null);
+    }
 
   }
 
-  private void renderList(HtmlWriter writer, List<Message> messages) throws IOException {
+  private void renderList(HtmlWriter writer, List<Message> messages, String listClass)
+      throws IOException {
+
     if (!messages.isEmpty()) {
-      writer.beginStartTag("ul").endStartTag();
+
+      writer.beginStartTag("ul");
+
+      List<String> classes = new ArrayList<>();
+      if (styleClass != null && styleClass.trim().length() > 0) {
+        classes.add(styleClass);
+      }
+      if (listClass != null && listClass.trim().length() > 0) {
+        classes.add(listClass);
+      }
+      if (!classes.isEmpty()) {
+        writer.attribute("class", classes.stream().collect(Collectors.joining(" ")));
+      }
+
+
+      writer.endStartTag();
+
       for (Message message : messages) {
         renderListEntry(writer, message);
       }
+
       writer.endTag("ul");
+
     }
   }
 
@@ -43,6 +80,26 @@ public class MessagesTag extends DynamicAttributesTag {
 
   public Messages getMessages() {
     return CDI.current().select(Messages.class).get();
+  }
+
+  public void setGrouping(boolean grouping) {
+    this.grouping = grouping;
+  }
+
+  public void setStyleClass(String styleClass) {
+    this.styleClass = styleClass;
+  }
+
+  public void setInfoClass(String infoClass) {
+    this.infoClass = infoClass;
+  }
+
+  public void setWarningClass(String warningClass) {
+    this.warningClass = warningClass;
+  }
+
+  public void setErrorClass(String errorClass) {
+    this.errorClass = errorClass;
   }
 
 }
