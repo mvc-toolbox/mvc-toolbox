@@ -13,7 +13,7 @@
 
       <h1>HTML Checkbox</h1>
 
-      <tb:messages styleClass="list-unstyled alert alert-success"/>
+      <tb:messages class="list-unstyled alert alert-success"/>
 
       <tb:form action="/checkbox" method="POST">
 

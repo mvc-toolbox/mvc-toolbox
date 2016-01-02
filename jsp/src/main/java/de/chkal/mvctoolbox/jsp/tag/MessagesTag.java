@@ -2,7 +2,7 @@ package de.chkal.mvctoolbox.jsp.tag;
 
 import de.chkal.mvctoolbox.core.message.Message;
 import de.chkal.mvctoolbox.core.message.Messages;
-import de.chkal.mvctoolbox.jsp.BaseTag;
+import de.chkal.mvctoolbox.jsp.DynamicBaseTag;
 import de.chkal.mvctoolbox.jsp.HtmlWriter;
 
 import javax.servlet.jsp.JspException;
@@ -11,13 +11,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class MessagesTag extends BaseTag {
+public class MessagesTag extends DynamicBaseTag {
 
   private boolean grouping;
 
   private String infoClass;
-
-  private String styleClass;
 
   private String warningClass;
 
@@ -48,8 +46,9 @@ public class MessagesTag extends BaseTag {
       writer.beginStartTag("ul");
 
       List<String> classes = new ArrayList<>();
-      if (styleClass != null && styleClass.trim().length() > 0) {
-        classes.add(styleClass);
+      Object classValue = getDynamicAttribute("class");
+      if (classValue != null) {
+        classes.add(classValue.toString());
       }
       if (listClass != null && listClass.trim().length() > 0) {
         classes.add(listClass);
@@ -78,10 +77,6 @@ public class MessagesTag extends BaseTag {
 
   public void setGrouping(boolean grouping) {
     this.grouping = grouping;
-  }
-
-  public void setStyleClass(String styleClass) {
-    this.styleClass = styleClass;
   }
 
   public void setInfoClass(String infoClass) {

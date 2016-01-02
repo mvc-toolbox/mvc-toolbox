@@ -21,12 +21,6 @@
       <rtexprvalue>true</rtexprvalue>
     </attribute>
     <attribute>
-      <description>Style class added to the list</description>
-      <name>styleClass</name>
-      <required>false</required>
-      <rtexprvalue>true</rtexprvalue>
-    </attribute>
-    <attribute>
       <description>In grouping mode this class is added to the list containing info messages</description>
       <name>infoClass</name>
       <required>false</required>
@@ -44,6 +38,7 @@
       <required>false</required>
       <rtexprvalue>true</rtexprvalue>
     </attribute>
+    <dynamic-attributes>true</dynamic-attributes>
   </tag>
 
   <tag>

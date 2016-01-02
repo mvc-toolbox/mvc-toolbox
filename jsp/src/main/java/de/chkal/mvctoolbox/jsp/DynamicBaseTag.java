@@ -21,4 +21,8 @@ public abstract class DynamicBaseTag extends BaseTag implements DynamicAttribute
     attributes.put(localName, value);
   }
 
+  protected Object getDynamicAttribute(String name) {
+    return attributes.get(name);
+  }
+
 }

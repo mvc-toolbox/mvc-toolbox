@@ -13,7 +13,7 @@
 
       <h1>Message support</h1>
 
-      <tb:messages grouping="true" styleClass="list-unstyled alert" infoClass="alert-success"
+      <tb:messages grouping="true" class="list-unstyled alert" infoClass="alert-success"
                    warningClass="alert-warning" errorClass="alert-danger"/>
 
       <tb:form action="/messages" method="POST">
