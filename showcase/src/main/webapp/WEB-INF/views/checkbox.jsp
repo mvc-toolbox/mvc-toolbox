@@ -16,26 +16,20 @@
       <form>
         <div class="checkbox">
           <label>
-            <tb:checkbox/>
-            <code>&lt;tb:checkbox/&gt;</code>
+            <tb:checkbox model="${form.checkbox1}"/>
+            <code>&lt;tb:checkbox model="\${form.checkbox1}"/&gt; &lt;!-- Value: null --&gt;</code>
           </label>
         </div>
         <div class="checkbox">
           <label>
-            <tb:checkbox model="${null}"/>
-            <code>&lt;tb:checkbox model="\${null}"/&gt;</code>
+            <tb:checkbox model="${form.checkbox2}"/>
+            <code>&lt;tb:checkbox model="\${form.checkbox2}"/&gt; &lt;!-- Value: true --&gt;</code>
           </label>
         </div>
         <div class="checkbox">
           <label>
-            <tb:checkbox model="${false}"/>
-            <code>&lt;tb:checkbox model="\${false}"/&gt;</code>
-          </label>
-        </div>
-        <div class="checkbox">
-          <label>
-            <tb:checkbox model="${true}"/>
-            <code>&lt;tb:checkbox model="\${true}"/&gt;</code>
+            <tb:checkbox model="${form.checkbox3}"/>
+            <code>&lt;tb:checkbox model="\${form.checkbox3}"/&gt; &lt;!-- Value: false --&gt;</code>
           </label>
         </div>
       </form>
