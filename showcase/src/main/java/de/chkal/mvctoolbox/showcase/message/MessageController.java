@@ -1,5 +1,6 @@
 package de.chkal.mvctoolbox.showcase.message;
 
+import de.chkal.mvctoolbox.core.message.Message;
 import de.chkal.mvctoolbox.core.message.Messages;
 
 import javax.inject.Inject;
@@ -22,7 +23,9 @@ public class MessageController {
 
   @POST
   public String post() {
-    messages.add("This message is preserved across a redirect!");
+    messages.add(Message.Severity.INFO, "This message is preserved across a redirect!");
+    messages.add(Message.Severity.WARNING, "This message is preserved across a redirect!");
+    messages.add(Message.Severity.ERROR, "This message is preserved across a redirect!");
     return "redirect:/messages";
   }
 
