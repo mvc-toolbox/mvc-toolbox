@@ -24,8 +24,7 @@ public class InputTag extends DynamicBaseTag {
     writer.attribute("name", name);
 
 
-    ClassList classList = ClassList.empty();
-    classList.add(getDynamicStringAttribute("class"));
+    ClassList classList = ClassList.of(getClassAttribute());
     if (hasError(name)) {
       classList.add(errorClass);
     }

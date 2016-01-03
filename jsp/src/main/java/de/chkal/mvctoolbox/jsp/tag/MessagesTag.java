@@ -46,7 +46,7 @@ public class MessagesTag extends DynamicBaseTag {
 
       writer.beginStartTag("ul");
 
-      ClassList.of(getDynamicStringAttribute("class"), listClass).write(writer);
+      ClassList.of(getClassAttribute(), listClass).write(writer);
 
       writer.endStartTag();
 

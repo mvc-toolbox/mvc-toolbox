@@ -34,9 +34,12 @@ public abstract class DynamicBaseTag extends BaseTag implements DynamicAttribute
     return attributes.get(name);
   }
 
-  protected String getDynamicStringAttribute(String name) {
-    Object value = attributes.get(name);
-    return value != null ? value.toString() : null;
+  protected String getClassAttribute() {
+    Object value = getDynamicAttribute("class");
+    if (value != null) {
+      return value.toString();
+    }
+    return null;
   }
 
 }
