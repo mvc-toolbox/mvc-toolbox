@@ -2,6 +2,7 @@ package de.chkal.mvctoolbox.jsp.tag;
 
 import de.chkal.mvctoolbox.core.message.Message;
 import de.chkal.mvctoolbox.core.message.Messages;
+import de.chkal.mvctoolbox.jsp.ClassList;
 import de.chkal.mvctoolbox.jsp.DynamicBaseTag;
 import de.chkal.mvctoolbox.jsp.HtmlWriter;
 
@@ -45,18 +46,7 @@ public class MessagesTag extends DynamicBaseTag {
 
       writer.beginStartTag("ul");
 
-      List<String> classes = new ArrayList<>();
-      Object classValue = getDynamicAttribute("class");
-      if (classValue != null) {
-        classes.add(classValue.toString());
-      }
-      if (listClass != null && listClass.trim().length() > 0) {
-        classes.add(listClass);
-      }
-      if (!classes.isEmpty()) {
-        writer.attribute("class", classes.stream().collect(Collectors.joining(" ")));
-      }
-
+      ClassList.of(getDynamicStringAttribute("class"), listClass).write(writer);
 
       writer.endStartTag();
 
