@@ -87,8 +87,20 @@
     <tag-class>de.chkal.mvctoolbox.jsp.tag.CheckboxTag</tag-class>
     <body-content>empty</body-content>
     <attribute>
+      <description>The name attribute of the checkbox</description>
+      <name>name</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
       <description>The current value of the checkbox</description>
       <name>model</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <description>Add this CSS class to the checkbox if the parameter has a binding error</description>
+      <name>errorClass</name>
       <required>false</required>
       <rtexprvalue>true</rtexprvalue>
     </attribute>
