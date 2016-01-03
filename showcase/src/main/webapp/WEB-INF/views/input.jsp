@@ -1,6 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="tb" uri="http://chkal.de/mvc/toolbox" %>
+<%@ taglib prefix="t" uri="http://chkal.de/mvc/toolbox" %>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -18,15 +18,15 @@
 
       <h1>HTML Input</h1>
 
-      <tb:messages grouping="true" class="list-unstyled alert" infoClass="alert-success"
+      <t:messages grouping="true" class="list-unstyled alert" infoClass="alert-success"
                    warningClass="alert-warning" errorClass="alert-danger"/>
 
-      <tb:form action="/input" method="POST" class="form-horizontal">
+      <t:form action="/input" method="POST" class="form-horizontal">
 
         <div class="form-group">
           <label for="text1" class="col-sm-2 control-label">Text #1</label>
           <div class="col-sm-10">
-            <tb:input id="text1" name="text1" type="text" value="${form.text1}"
+            <t:input id="text1" name="text1" type="text" value="${form.text1}"
                       class="form-control" errorClass="invalid" placeholder="Text #1"/>
             <span id="helpBlock" class="help-block">
               Minimum length: 5
@@ -37,7 +37,7 @@
         <div class="form-group">
           <label for="text2" class="col-sm-2 control-label">Text #2</label>
           <div class="col-sm-10">
-            <tb:input id="text2" name="text2" type="text" value="${form.text2}"
+            <t:input id="text2" name="text2" type="text" value="${form.text2}"
                       class="form-control" errorClass="invalid" placeholder="Text #2"/>
             <span id="helpBlock" class="help-block">
               Minimum length: 5
@@ -51,7 +51,7 @@
           </div>
         </div>
 
-      </tb:form>
+      </t:form>
 
       <p style="margin-top: 10px">
         <a href="${mvc.contextPath}/">Back to index</a>

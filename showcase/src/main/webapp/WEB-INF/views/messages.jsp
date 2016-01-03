@@ -1,6 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="tb" uri="http://chkal.de/mvc/toolbox" %>
+<%@ taglib prefix="t" uri="http://chkal.de/mvc/toolbox" %>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -13,12 +13,12 @@
 
       <h1>Message support</h1>
 
-      <tb:messages grouping="true" class="list-unstyled alert" infoClass="alert-success"
+      <t:messages grouping="true" class="list-unstyled alert" infoClass="alert-success"
                    warningClass="alert-warning" errorClass="alert-danger"/>
 
-      <tb:form action="/messages" method="POST">
+      <t:form action="/messages" method="POST">
         <button type="submit" class="btn btn-primary">Show me some messages!</button>
-      </tb:form>
+      </t:form>
 
       <p style="margin-top: 10px">
         <a href="${mvc.contextPath}/">Back to index</a>

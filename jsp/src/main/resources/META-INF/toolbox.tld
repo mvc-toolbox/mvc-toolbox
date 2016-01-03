@@ -6,7 +6,7 @@
   <description>MVC Toolbox Tag Library</description>
   <display-name>MVC Toolbox Tag Library</display-name>
   <tlib-version>1.0</tlib-version>
-  <short-name>tb</short-name>
+  <short-name>t</short-name>
   <uri>http://chkal.de/mvc/toolbox</uri>
 
   <tag>
