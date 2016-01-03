@@ -3,16 +3,25 @@ package de.chkal.mvctoolbox.jsp;
 import javax.servlet.jsp.JspException;
 import javax.servlet.jsp.tagext.DynamicAttributes;
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public abstract class DynamicBaseTag extends BaseTag implements DynamicAttributes {
 
   private final Map<String, Object> attributes = new HashMap<>();
 
   protected void writeDynamicAttributes(HtmlWriter writer) throws IOException {
+    writeDynamicAttributes(writer, Collections.emptyList());
+  }
+
+  protected void writeDynamicAttributes(HtmlWriter writer, String... ignore) throws IOException {
+    writeDynamicAttributes(writer, Arrays.asList(ignore));
+  }
+
+  protected void writeDynamicAttributes(HtmlWriter writer, List<String> ignore) throws IOException {
     for (Map.Entry<String, Object> entry : attributes.entrySet()) {
-      writer.attribute(entry.getKey(), entry.getValue());
+      if (!ignore.contains(entry.getKey())) {
+        writer.attribute(entry.getKey(), entry.getValue());
+      }
     }
   }
 
@@ -23,6 +32,11 @@ public abstract class DynamicBaseTag extends BaseTag implements DynamicAttribute
 
   protected Object getDynamicAttribute(String name) {
     return attributes.get(name);
+  }
+
+  protected String getDynamicStringAttribute(String name) {
+    Object value = attributes.get(name);
+    return value != null ? value.toString() : null;
   }
 
 }

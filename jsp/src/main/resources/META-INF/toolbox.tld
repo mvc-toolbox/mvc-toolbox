@@ -56,6 +56,32 @@
   </tag>
 
   <tag>
+    <description>Renders a HTML input</description>
+    <name>input</name>
+    <tag-class>de.chkal.mvctoolbox.jsp.tag.InputTag</tag-class>
+    <body-content>empty</body-content>
+    <attribute>
+      <description>The name attribute of the input element</description>
+      <name>name</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <description>The current value of the input element</description>
+      <name>model</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <description>Add this CSS class to the input if the parameter has a binding error</description>
+      <name>errorClass</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <dynamic-attributes>true</dynamic-attributes>
+  </tag>
+
+  <tag>
     <description>Renders a HTML checkbox</description>
     <name>checkbox</name>
     <tag-class>de.chkal.mvctoolbox.jsp.tag.CheckboxTag</tag-class>
