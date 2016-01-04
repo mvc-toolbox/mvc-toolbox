@@ -29,11 +29,11 @@ public class HtmlWriter {
   public HtmlWriter attribute(String name, Object value) throws IOException {
     writer.write(" ");
     writer.write(name);
+    writer.write("=\"");
     if (value != null) {
-      writer.write("=\"");
       writer.write(value.toString());
-      writer.write("\"");
     }
+    writer.write("\"");
     return this;
   }
 
