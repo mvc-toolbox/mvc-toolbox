@@ -35,6 +35,7 @@ public class SelectController {
 
     SelectForm form = new SelectForm();
     form.setCountry("DE");
+    form.setPageSize(25);
     models.put("form", form);
 
     List<SelectOption> countries = Arrays.stream(Locale.getISOCountries())
@@ -42,6 +43,11 @@ public class SelectController {
         .sorted((a, b) -> a.getLabel().compareTo(b.getLabel()))
         .collect(Collectors.toList());
     models.put("countries", countries);
+
+    List<SelectOption> pageSizes = Arrays.asList(10, 15, 25, 50, 100, 200, 500).stream()
+        .map(i -> new SelectOption(i, String.valueOf(i), i > 100))
+        .collect(Collectors.toList());
+    models.put("pageSizes", pageSizes);
 
     return "select.jsp";
 
@@ -57,6 +63,7 @@ public class SelectController {
     }
 
     messages.add("Country: " + form.getCountry());
+    messages.add("Page size: " + form.getPageSize());
     return "redirect:/select";
 
   }

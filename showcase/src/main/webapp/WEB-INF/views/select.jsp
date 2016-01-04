@@ -37,6 +37,19 @@
         </div>
 
         <div class="form-group">
+          <label for="pageSize" class="col-sm-2 control-label">Page Size</label>
+          <div class="col-sm-6">
+            <t:select id="pageSize" name="pageSize" model="${form.pageSize}"
+                      class="form-control" errorClass="invalid">
+              <t:options items="${pageSizes}"/>
+            </t:select>
+            <span id="helpBlock" class="help-block">
+              Select single integer value, some items disabled, 25 preselected.
+            </span>
+          </div>
+        </div>
+
+        <div class="form-group">
           <div class="col-sm-offset-2 col-sm-10">
             <button type="submit" class="btn btn-success">Submit</button>
           </div>
