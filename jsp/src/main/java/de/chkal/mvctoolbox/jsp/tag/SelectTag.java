@@ -40,7 +40,7 @@ public class SelectTag extends DynamicBaseTag {
 
   }
 
-  protected boolean isCurrentValue(Object value) {
+  protected boolean isSelected(Object value) {
     return Objects.equals(value, model);
   }
 

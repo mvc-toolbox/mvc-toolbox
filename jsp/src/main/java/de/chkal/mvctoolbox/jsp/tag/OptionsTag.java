@@ -32,6 +32,9 @@ public class OptionsTag extends BaseTag {
     if (isSelected(option)) {
       writer.attribute("selected");
     }
+    if (option.isDisabled()) {
+      writer.attribute("disabled");
+    }
     writer.endStartTag();
 
     writer.write(option.getLabel());
@@ -44,7 +47,7 @@ public class OptionsTag extends BaseTag {
 
     SelectTag selectTag = (SelectTag) findAncestorWithClass(this, SelectTag.class);
 
-    return selectTag != null && selectTag.isCurrentValue(option.getValue());
+    return selectTag != null && selectTag.isSelected(option.getValue());
 
   }
 

@@ -7,48 +7,31 @@ public class SelectOption implements Serializable {
 
   private static final long serialVersionUID = 1L;
 
-  private final String value;
+  private final Object value;
   private final String label;
+  private final boolean disabled;
 
-  public SelectOption(Integer value) {
-    this((value != null) ? String.valueOf(value) : null);
+  public SelectOption(Object value) {
+    this(value, (value != null) ? value.toString() : null);
   }
 
-  public SelectOption(Integer value, String label) {
-    this((value != null) ? String.valueOf(value) : null, label);
+  public SelectOption(Object value, String label) {
+    this(value, label, false);
   }
 
-  public SelectOption(Long value) {
-    this((value != null) ? String.valueOf(value) : null);
-  }
-
-  public SelectOption(Long value, String label) {
-    this((value != null) ? String.valueOf(value) : null, label);
-  }
-
-  public SelectOption(Boolean value) {
-    this((value != null) ? String.valueOf(value) : null);
-  }
-
-  public SelectOption(Boolean value, String label) {
-    this((value != null) ? String.valueOf(value) : null, label);
-  }
-
-  public SelectOption(Enum<?> value) {
-    this((value != null) ? value.name() : null);
-  }
-
-  public SelectOption(Enum<?> value, String label) {
-    this((value != null) ? value.name() : null, label);
-  }
-
-  public SelectOption(String value) {
-    this(value, value);
-  }
-
-  public SelectOption(String value, String label) {
-    this.value = (value != null) ? value : "";
+  public SelectOption(Object value, String label, boolean disabled) {
+    this.value = value;
     this.label = (label != null) ? label : "";
+    this.disabled = disabled;
+  }
+
+  @Override
+  public String toString() {
+    return "SelectOption{" +
+        "value=" + value +
+        ", label='" + label + '\'' +
+        ", disabled=" + disabled +
+        '}';
   }
 
   @Override
@@ -60,29 +43,26 @@ public class SelectOption implements Serializable {
       return false;
     }
     SelectOption that = (SelectOption) o;
-    return Objects.equals(value, that.value) &&
+    return disabled == that.disabled &&
+        Objects.equals(value, that.value) &&
         Objects.equals(label, that.label);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(value, label);
+    return Objects.hash(value, label, disabled);
   }
 
-  @Override
-  public String toString() {
-    return "SelectOption{" +
-        "value='" + value + '\'' +
-        ", label='" + label + '\'' +
-        '}';
-  }
-
-  public String getValue() {
+  public Object getValue() {
     return value;
   }
 
   public String getLabel() {
     return label;
+  }
+
+  public boolean isDisabled() {
+    return disabled;
   }
 
 }

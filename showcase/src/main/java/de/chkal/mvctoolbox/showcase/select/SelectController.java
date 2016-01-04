@@ -38,7 +38,7 @@ public class SelectController {
     models.put("form", form);
 
     List<SelectOption> countries = Arrays.stream(Locale.getISOCountries())
-        .map(iso -> new SelectOption(iso, new Locale(iso, iso).getDisplayCountry(Locale.ENGLISH)))
+        .map(iso -> new SelectOption(iso, getCountryName(iso)))
         .sorted((a, b) -> a.getLabel().compareTo(b.getLabel()))
         .collect(Collectors.toList());
     models.put("countries", countries);
@@ -59,6 +59,10 @@ public class SelectController {
     messages.add("Country: " + form.getCountry());
     return "redirect:/select";
 
+  }
+
+  private String getCountryName(String iso) {
+    return new Locale(iso, iso).getDisplayCountry(Locale.ENGLISH);
   }
 
 }
