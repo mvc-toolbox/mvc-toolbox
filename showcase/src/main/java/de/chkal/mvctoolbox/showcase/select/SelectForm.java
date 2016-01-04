@@ -10,6 +10,9 @@ public class SelectForm {
   @FormParam("pageSize")
   private Integer pageSize;
 
+  @FormParam("intensity")
+  private Intensity intensity;
+
   public String getCountry() {
     return country;
   }
@@ -24,5 +27,13 @@ public class SelectForm {
 
   public void setPageSize(Integer pageSize) {
     this.pageSize = pageSize;
+  }
+
+  public Intensity getIntensity() {
+    return intensity;
+  }
+
+  public void setIntensity(Intensity intensity) {
+    this.intensity = intensity;
   }
 }

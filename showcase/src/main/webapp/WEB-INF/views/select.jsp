@@ -50,6 +50,19 @@
         </div>
 
         <div class="form-group">
+          <label for="intensity" class="col-sm-2 control-label">Intensity</label>
+          <div class="col-sm-6">
+            <t:select id="intensity" name="intensity" model="${form.intensity}"
+                      class="form-control" errorClass="invalid">
+              <t:options items="${intensities}"/>
+            </t:select>
+            <span id="helpBlock" class="help-block">
+              Select single enum value, with null value, medium preselected.
+            </span>
+          </div>
+        </div>
+
+        <div class="form-group">
           <div class="col-sm-offset-2 col-sm-10">
             <button type="submit" class="btn btn-success">Submit</button>
           </div>

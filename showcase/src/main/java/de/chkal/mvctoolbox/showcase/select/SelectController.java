@@ -12,6 +12,7 @@ import javax.ws.rs.BeanParam;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Locale;
@@ -36,6 +37,7 @@ public class SelectController {
     SelectForm form = new SelectForm();
     form.setCountry("DE");
     form.setPageSize(25);
+    form.setIntensity(Intensity.MEDIUM);
     models.put("form", form);
 
     List<SelectOption> countries = Arrays.stream(Locale.getISOCountries())
@@ -48,6 +50,13 @@ public class SelectController {
         .map(i -> new SelectOption(i, String.valueOf(i), i > 100))
         .collect(Collectors.toList());
     models.put("pageSizes", pageSizes);
+
+    List<SelectOption> intensities = new ArrayList<>();
+    intensities.add(new SelectOption(null, "-"));
+    intensities.add(new SelectOption(Intensity.LOW, "low"));
+    intensities.add(new SelectOption(Intensity.MEDIUM, "medium"));
+    intensities.add(new SelectOption(Intensity.HIGH, "high"));
+    models.put("intensities", intensities);
 
     return "select.jsp";
 
@@ -64,6 +73,7 @@ public class SelectController {
 
     messages.add("Country: " + form.getCountry());
     messages.add("Page size: " + form.getPageSize());
+    messages.add("Intensity: " + form.getIntensity());
     return "redirect:/select";
 
   }
