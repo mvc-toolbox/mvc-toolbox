@@ -31,7 +31,7 @@
               <t:options items="${countries}"/>
             </t:select>
             <span id="helpBlock" class="help-block">
-              Germany is be preselected.
+              Select single string value, Germany is preselected.
             </span>
           </div>
         </div>
