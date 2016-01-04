@@ -7,6 +7,7 @@ import de.chkal.mvctoolbox.jsp.HtmlWriter;
 import javax.servlet.jsp.JspException;
 import java.io.IOException;
 import java.util.List;
+import java.util.Objects;
 
 public class OptionsTag extends BaseTag {
 
@@ -16,6 +17,8 @@ public class OptionsTag extends BaseTag {
   public void doTag() throws JspException, IOException {
 
     HtmlWriter writer = new HtmlWriter(getJspContext());
+
+    Objects.requireNonNull(items, "items must not be null");
 
     for (Object obj : items) {
       if (obj instanceof SelectOption) {
