@@ -1,6 +1,8 @@
 package de.chkal.mvctoolbox.showcase.select;
 
 import javax.ws.rs.FormParam;
+import java.util.ArrayList;
+import java.util.List;
 
 public class SelectForm {
 
@@ -12,6 +14,9 @@ public class SelectForm {
 
   @FormParam("intensity")
   private Intensity intensity;
+
+  @FormParam("tags")
+  private List<String> tags = new ArrayList<>();
 
   public String getCountry() {
     return country;
@@ -35,5 +40,13 @@ public class SelectForm {
 
   public void setIntensity(Intensity intensity) {
     this.intensity = intensity;
+  }
+
+  public List<String> getTags() {
+    return tags;
+  }
+
+  public void setTags(List<String> tags) {
+    this.tags = tags;
   }
 }

@@ -6,6 +6,7 @@ import de.chkal.mvctoolbox.jsp.HtmlWriter;
 
 import javax.servlet.jsp.JspException;
 import java.io.IOException;
+import java.util.Collection;
 import java.util.Objects;
 
 public class SelectTag extends DynamicBaseTag {
@@ -41,7 +42,12 @@ public class SelectTag extends DynamicBaseTag {
   }
 
   protected boolean isSelected(Object value) {
-    return Objects.equals(value, model);
+    if (model instanceof Collection) {
+      Collection col = (Collection) model;
+      return col.contains(value);
+    } else {
+      return Objects.equals(value, model);
+    }
   }
 
   public void setName(String name) {

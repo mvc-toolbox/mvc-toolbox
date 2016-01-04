@@ -34,12 +34,6 @@ public class SelectController {
   @GET
   public String get() {
 
-    SelectForm form = new SelectForm();
-    form.setCountry("DE");
-    form.setPageSize(25);
-    form.setIntensity(Intensity.MEDIUM);
-    models.put("form", form);
-
     List<SelectOption> countries = Arrays.stream(Locale.getISOCountries())
         .map(iso -> new SelectOption(iso, getCountryName(iso)))
         .sorted((a, b) -> a.getLabel().compareTo(b.getLabel()))
@@ -58,6 +52,18 @@ public class SelectController {
     intensities.add(new SelectOption(Intensity.HIGH, "high"));
     models.put("intensities", intensities);
 
+    List<SelectOption> tags = Arrays.asList("java", "php", "mvc", "web", "javafx").stream()
+        .map(tag -> new SelectOption(tag, tag))
+        .collect(Collectors.toList());
+    models.put("tags", tags);
+
+    SelectForm form = new SelectForm();
+    form.setCountry("DE");
+    form.setPageSize(25);
+    form.setIntensity(Intensity.MEDIUM);
+    form.setTags(Arrays.asList("java", "web", "mvc"));
+    models.put("form", form);
+
     return "select.jsp";
 
   }
@@ -74,6 +80,7 @@ public class SelectController {
     messages.add("Country: " + form.getCountry());
     messages.add("Page size: " + form.getPageSize());
     messages.add("Intensity: " + form.getIntensity());
+    messages.add("Tags: " + form.getTags().stream().collect(Collectors.joining(", ")));
     return "redirect:/select";
 
   }

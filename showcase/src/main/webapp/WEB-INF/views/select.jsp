@@ -63,6 +63,20 @@
         </div>
 
         <div class="form-group">
+          <label for="tags" class="col-sm-2 control-label">Tags</label>
+          <div class="col-sm-6">
+            <t:select id="tags" name="tags" model="${form.tags}"
+                      multiple="multiple" size="5"
+                      class="form-control" errorClass="invalid">
+              <t:options items="${tags}"/>
+            </t:select>
+            <span id="helpBlock" class="help-block">
+              Select multiple values, subset preselected.
+            </span>
+          </div>
+        </div>
+
+        <div class="form-group">
           <div class="col-sm-offset-2 col-sm-10">
             <button type="submit" class="btn btn-success">Submit</button>
           </div>
