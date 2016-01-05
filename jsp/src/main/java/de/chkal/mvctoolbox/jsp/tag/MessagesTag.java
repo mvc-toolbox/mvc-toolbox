@@ -8,9 +8,7 @@ import de.chkal.mvctoolbox.jsp.HtmlWriter;
 
 import javax.servlet.jsp.JspException;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class MessagesTag extends DynamicBaseTag {
 
@@ -30,17 +28,17 @@ public class MessagesTag extends DynamicBaseTag {
     Messages messages = getBean(Messages.class);
 
     if (grouping) {
-      renderList(writer, messages.getInfos(), infoClass);
-      renderList(writer, messages.getWarnings(), warningClass);
-      renderList(writer, messages.getErrors(), errorClass);
+      renderList(writer, messages.getInfos(), infoClass, false);
+      renderList(writer, messages.getWarnings(), warningClass, false);
+      renderList(writer, messages.getErrors(), errorClass, false);
     } else {
-      renderList(writer, messages.getAll(), null);
+      renderList(writer, messages.getAll(), null, true);
     }
 
   }
 
-  private void renderList(HtmlWriter writer, List<Message> messages, String listClass)
-      throws IOException {
+  private void renderList(HtmlWriter writer, List<Message> messages, String listClass,
+                          boolean styleListEntries) throws IOException {
 
     if (!messages.isEmpty()) {
 
@@ -51,7 +49,7 @@ public class MessagesTag extends DynamicBaseTag {
       writer.endStartTag();
 
       for (Message message : messages) {
-        renderListEntry(writer, message);
+        renderListEntry(writer, message, styleListEntries);
       }
 
       writer.endTag("ul");
@@ -59,10 +57,31 @@ public class MessagesTag extends DynamicBaseTag {
     }
   }
 
-  private void renderListEntry(HtmlWriter writer, Message message) throws IOException {
-    writer.beginStartTag("li").endStartTag();
+  private void renderListEntry(HtmlWriter writer, Message message, boolean addSeverityClass)
+      throws IOException {
+
+    writer.beginStartTag("li");
+    if (addSeverityClass) {
+      ClassList.of(getSeverityClass(message.getSeverity())).write(writer);
+    }
+    writer.endStartTag();
+
     writer.write(message.getText());
+
     writer.endTag("li");
+
+  }
+
+  private String getSeverityClass(Message.Severity severity) {
+    switch (severity) {
+      case INFO:
+        return infoClass;
+      case WARNING:
+        return warningClass;
+      case ERROR:
+        return errorClass;
+    }
+    return null;
   }
 
   public void setGrouping(boolean grouping) {
