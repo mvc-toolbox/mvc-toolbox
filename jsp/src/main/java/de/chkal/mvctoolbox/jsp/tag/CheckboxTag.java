@@ -36,6 +36,12 @@ public class CheckboxTag extends DynamicBaseTag {
       writer.attribute("checked");
     }
 
+    Object value = getDynamicAttribute("value");
+    if (value == null) {
+      value = "true";
+    }
+    writer.attribute("value", value);
+
     writer.selfClose();
 
   }

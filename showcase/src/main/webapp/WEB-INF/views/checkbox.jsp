@@ -19,20 +19,20 @@
 
         <div class="checkbox">
           <label>
-            <t:checkbox name="checkbox1" model="${form.checkbox1}" value="true"/>
-            <code>&lt;tb:checkbox name="checkbox1" model="\${form.checkbox1}" value="true"/&gt; &lt;!-- Value: null --&gt;</code>
+            <t:checkbox name="checkbox1" model="${form.checkbox1}"/>
+            <code>&lt;tb:checkbox name="checkbox1" model="\${form.checkbox1}"/&gt; &lt;!-- Value: null --&gt;</code>
           </label>
         </div>
         <div class="checkbox">
           <label>
-            <t:checkbox name="checkbox2" model="${form.checkbox2}" value="true"/>
-            <code>&lt;tb:checkbox name="checkbox2" model="\${form.checkbox2}" value="true"/&gt; &lt;!-- Value: true --&gt;</code>
+            <t:checkbox name="checkbox2" model="${form.checkbox2}"/>
+            <code>&lt;tb:checkbox name="checkbox2" model="\${form.checkbox2}"/&gt; &lt;!-- Value: true --&gt;</code>
           </label>
         </div>
         <div class="checkbox">
           <label>
-            <t:checkbox name="checkbox3" model="${form.checkbox3}" value="true"/>
-            <code>&lt;tb:checkbox name="checkbox3" model="\${form.checkbox3}" value="true"/&gt; &lt;!-- Value: false --&gt;</code>
+            <t:checkbox name="checkbox3" model="${form.checkbox3}"/>
+            <code>&lt;tb:checkbox name="checkbox3" model="\${form.checkbox3}"/&gt; &lt;!-- Value: false --&gt;</code>
           </label>
         </div>
 
