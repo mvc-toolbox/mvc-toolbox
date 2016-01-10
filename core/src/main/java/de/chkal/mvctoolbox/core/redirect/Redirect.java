@@ -50,7 +50,7 @@ public class Redirect {
       String name = matcher.group(1);
       Object value = remainingParams.remove(name);
       if (value == null) {
-        throw new IllegalArgumentException("Cannot find value for parameter: " + name);
+        throw new IllegalStateException("Cannot find value for parameter: " + name);
       }
       matcher.appendReplacement(result, encodePath(value.toString()));
     }

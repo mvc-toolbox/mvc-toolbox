@@ -1,9 +1,14 @@
 package de.chkal.mvctoolbox.core.redirect;
 
 import org.junit.Assert;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 
 public class RedirectTest {
+
+  @Rule
+  public ExpectedException exceptionRule = ExpectedException.none();
 
   @Test
   public void shouldWorkForNoParams() {
@@ -50,6 +55,13 @@ public class RedirectTest {
         .set("foo", "bar")
         .build();
     Assert.assertEquals("redirect:/a/bar/b", result);
+  }
+
+  @Test
+  public void shouldFailForMissingPathParam() {
+    exceptionRule.expect(IllegalStateException.class);
+    exceptionRule.expectMessage("foobar");
+    Redirect.to("/{foobar}").build();
   }
 
   @Test
