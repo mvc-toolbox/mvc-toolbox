@@ -1,5 +1,7 @@
 package de.chkal.mvctoolbox.core.typesafe;
 
+import javax.annotation.Priority;
+import javax.ws.rs.Priorities;
 import javax.ws.rs.container.ContainerRequestContext;
 import javax.ws.rs.container.ContainerResponseContext;
 import javax.ws.rs.container.ContainerResponseFilter;
@@ -8,6 +10,7 @@ import java.io.IOException;
 import java.lang.reflect.Field;
 
 @Provider
+@Priority(Priorities.ENTITY_CODER + 1)
 public class TypesafeViewResponseFilter implements ContainerResponseFilter {
 
   @Override
