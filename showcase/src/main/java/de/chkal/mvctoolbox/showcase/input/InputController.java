@@ -1,6 +1,6 @@
 package de.chkal.mvctoolbox.showcase.input;
 
-import de.chkal.mvctoolbox.core.message.Messages;
+import de.chkal.mvctoolbox.core.message.MvcMessages;
 
 import javax.inject.Inject;
 import javax.mvc.Models;
@@ -20,7 +20,7 @@ public class InputController {
   private Models models;
 
   @Inject
-  private Messages messages;
+  private MvcMessages messages;
 
   @Inject
   private BindingResult bindingResult;

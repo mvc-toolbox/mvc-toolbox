@@ -1,6 +1,6 @@
 package de.chkal.mvctoolbox.core;
 
-import de.chkal.mvctoolbox.core.message.Messages;
+import de.chkal.mvctoolbox.core.message.MvcMessages;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
@@ -16,9 +16,9 @@ import javax.inject.Named;
 public class Toolbox {
 
   @Inject
-  private Messages messages;
+  private MvcMessages messages;
 
-  public Messages getMessages() {
+  public MvcMessages getMessages() {
     return messages;
   }
 

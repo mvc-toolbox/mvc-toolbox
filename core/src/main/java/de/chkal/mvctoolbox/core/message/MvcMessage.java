@@ -3,7 +3,7 @@ package de.chkal.mvctoolbox.core.message;
 import java.io.Serializable;
 import java.util.Objects;
 
-public class Message implements Serializable {
+public class MvcMessage implements Serializable {
 
   private static final long serialVersionUID = 1L;
 
@@ -17,15 +17,15 @@ public class Message implements Serializable {
   private final String param;
   private final String text;
 
-  public Message(String text) {
+  public MvcMessage(String text) {
     this(Severity.INFO, text);
   }
 
-  public Message(Severity severity, String text) {
+  public MvcMessage(Severity severity, String text) {
     this(severity, null, text);
   }
 
-  public Message(Severity severity, String param, String text) {
+  public MvcMessage(Severity severity, String param, String text) {
     this.severity = Objects.requireNonNull(severity, "Severity must not be null");
     this.text = Objects.requireNonNull(text, "Text must not be null");
     this.param = param; // optional

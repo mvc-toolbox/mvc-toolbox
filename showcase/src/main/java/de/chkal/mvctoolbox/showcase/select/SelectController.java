@@ -1,6 +1,6 @@
 package de.chkal.mvctoolbox.showcase.select;
 
-import de.chkal.mvctoolbox.core.message.Messages;
+import de.chkal.mvctoolbox.core.message.MvcMessages;
 import de.chkal.mvctoolbox.core.model.SelectOption;
 
 import javax.inject.Inject;
@@ -26,7 +26,7 @@ public class SelectController {
   private Models models;
 
   @Inject
-  private Messages messages;
+  private MvcMessages messages;
 
   @Inject
   private BindingResult bindingResult;

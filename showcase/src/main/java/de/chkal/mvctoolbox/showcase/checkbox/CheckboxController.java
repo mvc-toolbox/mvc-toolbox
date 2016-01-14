@@ -1,6 +1,6 @@
 package de.chkal.mvctoolbox.showcase.checkbox;
 
-import de.chkal.mvctoolbox.core.message.Messages;
+import de.chkal.mvctoolbox.core.message.MvcMessages;
 
 import javax.inject.Inject;
 import javax.mvc.Models;
@@ -18,7 +18,7 @@ public class CheckboxController {
   private Models models;
 
   @Inject
-  private Messages messages;
+  private MvcMessages messages;
 
   @GET
   public String get() {

@@ -1,7 +1,7 @@
 package de.chkal.mvctoolbox.showcase.message;
 
-import de.chkal.mvctoolbox.core.message.Message;
-import de.chkal.mvctoolbox.core.message.Messages;
+import de.chkal.mvctoolbox.core.message.MvcMessage;
+import de.chkal.mvctoolbox.core.message.MvcMessages;
 
 import javax.inject.Inject;
 import javax.mvc.annotation.Controller;
@@ -14,7 +14,7 @@ import javax.ws.rs.Path;
 public class MessageController {
 
   @Inject
-  private Messages messages;
+  private MvcMessages messages;
 
   @GET
   public String get() {
@@ -23,9 +23,9 @@ public class MessageController {
 
   @POST
   public String post() {
-    messages.add(Message.Severity.INFO, "This message is preserved across a redirect!");
-    messages.add(Message.Severity.WARNING, "This message is preserved across a redirect!");
-    messages.add(Message.Severity.ERROR, "This message is preserved across a redirect!");
+    messages.add(MvcMessage.Severity.INFO, "This message is preserved across a redirect!");
+    messages.add(MvcMessage.Severity.WARNING, "This message is preserved across a redirect!");
+    messages.add(MvcMessage.Severity.ERROR, "This message is preserved across a redirect!");
     return "redirect:/messages";
   }
 

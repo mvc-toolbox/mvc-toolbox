@@ -1,7 +1,7 @@
 package de.chkal.mvctoolbox.jsp.tag;
 
-import de.chkal.mvctoolbox.core.message.Message;
-import de.chkal.mvctoolbox.core.message.Messages;
+import de.chkal.mvctoolbox.core.message.MvcMessage;
+import de.chkal.mvctoolbox.core.message.MvcMessages;
 import de.chkal.mvctoolbox.jsp.ClassList;
 import de.chkal.mvctoolbox.jsp.DynamicBaseTag;
 import de.chkal.mvctoolbox.jsp.HtmlWriter;
@@ -25,7 +25,7 @@ public class MessagesTag extends DynamicBaseTag {
 
     HtmlWriter writer = new HtmlWriter(getJspContext());
 
-    Messages messages = getBean(Messages.class);
+    MvcMessages messages = getBean(MvcMessages.class);
 
     if (grouping) {
       renderList(writer, messages.getInfos(), infoClass, false);
@@ -37,7 +37,7 @@ public class MessagesTag extends DynamicBaseTag {
 
   }
 
-  private void renderList(HtmlWriter writer, List<Message> messages, String listClass,
+  private void renderList(HtmlWriter writer, List<MvcMessage> messages, String listClass,
                           boolean styleListEntries) throws IOException {
 
     if (!messages.isEmpty()) {
@@ -48,7 +48,7 @@ public class MessagesTag extends DynamicBaseTag {
 
       writer.endStartTag();
 
-      for (Message message : messages) {
+      for (MvcMessage message : messages) {
         renderListEntry(writer, message, styleListEntries);
       }
 
@@ -57,7 +57,7 @@ public class MessagesTag extends DynamicBaseTag {
     }
   }
 
-  private void renderListEntry(HtmlWriter writer, Message message, boolean addSeverityClass)
+  private void renderListEntry(HtmlWriter writer, MvcMessage message, boolean addSeverityClass)
       throws IOException {
 
     writer.beginStartTag("li");
@@ -72,7 +72,7 @@ public class MessagesTag extends DynamicBaseTag {
 
   }
 
-  private String getSeverityClass(Message.Severity severity) {
+  private String getSeverityClass(MvcMessage.Severity severity) {
     switch (severity) {
       case INFO:
         return infoClass;
