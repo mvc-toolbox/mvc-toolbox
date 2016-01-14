@@ -65,4 +65,16 @@ public class MvcMessages implements Serializable {
         .collect(Collectors.toList());
   }
 
+  public MvcMessage getMessage(String param) {
+    return messages.stream()
+        .filter(m -> Objects.equals(param, m.getParam()))
+        .findFirst().orElse(null);
+  }
+
+  public List<MvcMessage> getMessages(String param) {
+    return messages.stream()
+        .filter(m -> Objects.equals(param, m.getParam()))
+        .collect(Collectors.toList());
+  }
+
 }
