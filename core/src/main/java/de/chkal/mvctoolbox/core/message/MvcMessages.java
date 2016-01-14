@@ -30,6 +30,9 @@ public class MvcMessages implements Serializable {
         .map(e -> new MvcMessage(MvcMessage.Severity.ERROR, e.getParamName(), e.getMessage()))
         .forEach(this::add);
 
+    /*
+     * FIXME: How to get the parameter the ConstraintViolation is referring to?
+     */
     bindingResult.getAllViolations().stream()
         .map(v -> new MvcMessage(MvcMessage.Severity.ERROR, null, v.getMessage()))
         .forEach(this::add);
