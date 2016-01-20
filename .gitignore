@@ -9,3 +9,5 @@ generated-sources/
 *.iml
 *.ipr
 test-output
+nbactions.xml
+nb-configuration.xml
