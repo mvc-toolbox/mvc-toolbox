@@ -34,10 +34,11 @@ public class MvcMessages implements Serializable {
      * FIXME: How to get the parameter the ConstraintViolation is referring to?
      */
     bindingResult.getAllViolations().stream()
-            .forEach(v -> {
-                final String p = v.getPropertyPath().toString();
-                this.add(new MvcMessage(MvcMessage.Severity.ERROR, p.substring(p.lastIndexOf('.') + 1), v.getMessage()));
-            });
+        .forEach(v -> {
+          final String path = v.getPropertyPath().toString();
+          final String param = path.substring(path.lastIndexOf('.') + 1);
+          this.add(new MvcMessage(MvcMessage.Severity.ERROR, param, v.getMessage()));
+        });
 
     return this;
   }
