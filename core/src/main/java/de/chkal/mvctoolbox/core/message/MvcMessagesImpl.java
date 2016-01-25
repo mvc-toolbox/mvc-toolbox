@@ -31,10 +31,10 @@ public class MvcMessagesImpl implements Serializable, MvcMessages {
   public MvcMessages add(BindingResult bindingResult) {
 
     bindingResult.getAllBindingErrors().stream()
-      .map(e -> new MvcMessage(MvcMessage.Severity.ERROR, e.getParamName(), e.getMessage()))
-      .forEach(this::add);
+        .map(e -> new MvcMessage(MvcMessage.Severity.ERROR, e.getParamName(), e.getMessage()))
+        .forEach(this::add);
 
-      bindingResult.getAllViolations().stream()
+    bindingResult.getAllViolations().stream()
         .forEach(v -> {
 
           final String path = v.getPropertyPath().toString();
