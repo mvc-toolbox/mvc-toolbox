@@ -8,6 +8,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
+import javax.ws.rs.FormParam;
 
 @RedirectScoped
 public class MvcMessagesImpl implements Serializable, MvcMessages {
@@ -30,16 +31,25 @@ public class MvcMessagesImpl implements Serializable, MvcMessages {
   public MvcMessages add(BindingResult bindingResult) {
 
     bindingResult.getAllBindingErrors().stream()
-        .map(e -> new MvcMessage(MvcMessage.Severity.ERROR, e.getParamName(), e.getMessage()))
-        .forEach(this::add);
+      .map(e -> new MvcMessage(MvcMessage.Severity.ERROR, e.getParamName(), e.getMessage()))
+      .forEach(this::add);
 
-    /*
-     * FIXME: How to get the parameter the ConstraintViolation is referring to?
-     */
-    bindingResult.getAllViolations().stream()
+      bindingResult.getAllViolations().stream()
         .forEach(v -> {
+
           final String path = v.getPropertyPath().toString();
-          final String param = path.substring(path.lastIndexOf('.') + 1);
+          String param = path.substring(path.lastIndexOf('.') + 1);
+
+          try {
+            String annotatedParam = v.getLeafBean().getClass().getDeclaredField(param).getAnnotation(FormParam.class).value();
+            if (annotatedParam != null && !annotatedParam.isEmpty()) {
+              param = annotatedParam;
+            }
+          } catch (NoSuchFieldException e) {
+            // What to do here?
+            // Ignore?
+          }
+
           this.add(new MvcMessage(MvcMessage.Severity.ERROR, param, v.getMessage()));
         });
 
