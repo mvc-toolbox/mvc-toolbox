@@ -29,6 +29,63 @@ public class MvcMessage implements Serializable {
   private final String text;
 
   /**
+   * Creates a new global info message.
+   *
+   * @param text The text of the message, must not be null
+   */
+  public static MvcMessage info(String text) {
+    return info(null, text);
+  }
+
+  /**
+   * Creates a new info message referring to the given parameter.
+   *
+   * @param param The name of parameter this message refers to or null
+   * @param text  The text of the message, must not be null
+   */
+  public static MvcMessage info(String param, String text) {
+    return new MvcMessage(Severity.INFO, param, text);
+  }
+
+  /**
+   * Creates a new global warning message.
+   *
+   * @param text The text of the message, must not be null
+   */
+  public static MvcMessage warning(String text) {
+    return warning(null, text);
+  }
+
+  /**
+   * Creates a new warning message referring to the given parameter.
+   *
+   * @param param The name of parameter this message refers to or null
+   * @param text  The text of the message, must not be null
+   */
+  public static MvcMessage warning(String param, String text) {
+    return new MvcMessage(Severity.WARNING, param, text);
+  }
+
+  /**
+   * Creates a new global error message.
+   *
+   * @param text The text of the message, must not be null
+   */
+  public static MvcMessage error(String text) {
+    return error(null, text);
+  }
+
+  /**
+   * Creates a new error message referring to the given parameter.
+   *
+   * @param param The name of parameter this message refers to or null
+   * @param text  The text of the message, must not be null
+   */
+  public static MvcMessage error(String param, String text) {
+    return new MvcMessage(Severity.ERROR, param, text);
+  }
+
+  /**
    * Creates a new global message with a severity of INFO.
    *
    * @param text The text of the message, must not be null
