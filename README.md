@@ -1,6 +1,4 @@
-# MVC Toolbox [![Build Status](https://travis-ci.org/chkal/mvc-toolbox.svg?branch=master)](https://travis-ci.org/chkal/mvc-toolbox)
-
-[![Join the chat at https://gitter.im/chkal/mvc-toolbox](https://badges.gitter.im/chkal/mvc-toolbox.svg)](https://gitter.im/chkal/mvc-toolbox?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+# MVC Toolbox [![Build Status](https://travis-ci.org/chkal/mvc-toolbox.svg?branch=master)](https://travis-ci.org/chkal/mvc-toolbox) [![Join the chat](https://badges.gitter.im/chkal/mvc-toolbox.svg)](https://gitter.im/chkal/mvc-toolbox?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 ## What is it?
 
