@@ -6,10 +6,10 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * <p>Defines an identifier for a target method to be referenced by {@link LinkTo}.</p>
+ * <p>Defines a symbolic name for a target method to be referenced by {@link LinkTo}.</p>
  *
- * <p>This identifier should be used unique per URI template. It can be used multiple times
- * for the same URI template if the template is used by different HTTP methods.</p>
+ * <p>The same value of @LinkTarget can only used multiple times on different methods
+ * if these methods are using the same URI-template with different HTTP verbs.</p>
  *
  * TODO should we also support annotating target classes as target?
  * TODO could be replaced by adding value() to @Controller?
