@@ -14,13 +14,14 @@ import javax.ws.rs.QueryParam;
  * @author Florian Hirsch
  */
 @Controller
-@Path("linkto")
-public class LinkToController {
+@Path("list-params")
+public class ListParameterController {
 
-	@GET
-	@LinkTarget("some-target")
-	public String root() {
-		return "linkto.jsp";
-	}
+    @GET
+    @Path("path/{p1}/{p2}")
+    @LinkTarget("list-params")
+    public String pathParams(@PathParam("p1") String p1, @PathParam("p2") long p2) {
+        return "linkto.jsp";
+    }
 
 }
