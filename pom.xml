@@ -10,7 +10,7 @@
 
   <name>MVC Toolbox - Parent</name>
   <description>MVC Toolbox - Parent</description>
-  <url>https://github.com/chkal/mvc-toolbox</url>
+  <url>https://github.com/mvc-toolbox/mvc-toolbox</url>
 
   <properties>
     <maven.compiler.source>1.8</maven.compiler.source>
@@ -38,9 +38,9 @@
   </licenses>
 
   <scm>
-    <connection>scm:git:git@github.com:chkal/mvc-toolbox.git</connection>
-    <developerConnection>scm:git:git@github.com:chkal/mvc-toolbox.git</developerConnection>
-    <url>git@github.com:chkal/mvc-toolbox.git</url>
+    <connection>scm:git:git@github.com:mvc-toolbox/mvc-toolbox.git</connection>
+    <developerConnection>scm:git:git@github.com:mvc-toolbox/mvc-toolbox.git</developerConnection>
+    <url>git@github.com:mvc-toolbox/mvc-toolbox.git</url>
     <tag>master</tag>
   </scm>
 
