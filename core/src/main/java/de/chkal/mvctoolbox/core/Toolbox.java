@@ -1,8 +1,6 @@
 package de.chkal.mvctoolbox.core;
 
-import de.chkal.mvctoolbox.core.linkto.api.LinkTo;
 import de.chkal.mvctoolbox.core.message.MvcMessages;
-
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -19,15 +17,8 @@ public class Toolbox {
   @Inject
   private MvcMessages messages;
 
-  @Inject
-  private LinkTo linkTo;
-
   public MvcMessages getMessages() {
     return messages;
-  }
-
-  public LinkTo getLinkTo() {
-    return linkTo;
   }
 
 }
