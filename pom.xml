@@ -15,7 +15,7 @@
   <properties>
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
-    <mvc.spec.version>1.0-edr2</mvc.spec.version>
+    <mvc.spec.version>1.0-pr</mvc.spec.version>
     <jaxrs.spec.version>2.0.1</jaxrs.spec.version>
     <cdi.spec.version>1.2</cdi.spec.version>
     <validation.spec.version>1.1.0.Final</validation.spec.version>

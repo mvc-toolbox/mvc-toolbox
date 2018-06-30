@@ -17,16 +17,9 @@ public abstract class BaseTag extends SimpleTagSupport {
       BindingResult bindingResult = getBean(BindingResult.class);
 
       boolean hasBindingError = bindingResult.getBindingError(param) != null;
+      boolean hasValidationError = bindingResult.getBindingError(param) != null;
 
-      // FIXME: Remove after RI implemented this correctly
-      boolean hasConstraintViolation;
-      try {
-        hasConstraintViolation = !bindingResult.getViolations(param).isEmpty();
-      } catch (UnsupportedOperationException e) {
-        hasConstraintViolation = !bindingResult.getAllViolations().isEmpty();
-      }
-
-      return hasBindingError || hasConstraintViolation;
+      return hasBindingError || hasValidationError;
 
     }
     return false;

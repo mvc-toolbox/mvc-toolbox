@@ -8,6 +8,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
+import javax.validation.ConstraintViolation;
 import javax.ws.rs.FormParam;
 
 @RedirectScoped
@@ -34,24 +35,9 @@ public class MvcMessagesImpl implements Serializable, MvcMessages {
         .map(e -> new MvcMessage(MvcMessage.Severity.ERROR, e.getParamName(), e.getMessage()))
         .forEach(this::add);
 
-    bindingResult.getAllViolations().stream()
-        .forEach(v -> {
-
-          final String path = v.getPropertyPath().toString();
-          String param = path.substring(path.lastIndexOf('.') + 1);
-
-          try {
-            String annotatedParam = v.getLeafBean().getClass().getDeclaredField(param).getAnnotation(FormParam.class).value();
-            if (annotatedParam != null && !annotatedParam.isEmpty()) {
-              param = annotatedParam;
-            }
-          } catch (NoSuchFieldException e) {
-            // What to do here?
-            // Ignore?
-          }
-
-          this.add(new MvcMessage(MvcMessage.Severity.ERROR, param, v.getMessage()));
-        });
+    bindingResult.getAllValidationErrors().stream()
+        .map(e -> new MvcMessage(MvcMessage.Severity.ERROR, e.getParamName(), e.getMessage()))
+        .forEach(this::add);
 
     return this;
   }
