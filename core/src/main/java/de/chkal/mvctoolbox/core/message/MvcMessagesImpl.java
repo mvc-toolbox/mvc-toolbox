@@ -1,6 +1,6 @@
 package de.chkal.mvctoolbox.core.message;
 
-import javax.mvc.annotation.RedirectScoped;
+import javax.mvc.RedirectScoped;
 import javax.mvc.binding.BindingResult;
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -31,11 +31,11 @@ public class MvcMessagesImpl implements Serializable, MvcMessages {
   @Override
   public MvcMessages add(BindingResult bindingResult) {
 
-    bindingResult.getAllBindingErrors().stream()
+    bindingResult.getAllErrors().stream()
         .map(e -> new MvcMessage(MvcMessage.Severity.ERROR, e.getParamName(), e.getMessage()))
         .forEach(this::add);
 
-    bindingResult.getAllValidationErrors().stream()
+    bindingResult.getAllErrors().stream()
         .map(e -> new MvcMessage(MvcMessage.Severity.ERROR, e.getParamName(), e.getMessage()))
         .forEach(this::add);
 
