@@ -19,9 +19,11 @@
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
     <mvc.spec.version>1.0-pfd</mvc.spec.version>
+    <krazo.version>1.0.0-SNAPSHOT</krazo.version>
     <jaxrs.spec.version>2.1.1</jaxrs.spec.version>
     <cdi.spec.version>2.0.SP1</cdi.spec.version>
     <validation.spec.version>2.0.1.Final</validation.spec.version>
+    <hibernate.validator.version>5.2.1.Final</hibernate.validator.version>
     <jsp.spec.version>2.3.3</jsp.spec.version>
     <deltaspike.version>1.9.0</deltaspike.version>
     <weld-se-core.version>3.1.2.Final</weld-se-core.version>

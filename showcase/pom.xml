@@ -15,6 +15,19 @@
   <name>MVC Toolbox - Showcase</name>
   <description>MVC Toolbox - Showcase</description>
 
+  <repositories>
+    <repository>
+      <id>sonatype-oss-snapshots</id>
+      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+      <releases>
+        <enabled>false</enabled>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+    </repository>
+  </repositories>
+
   <dependencies>
 
     <!-- Required dependencies if you deploy to a plain Servlet container like Tomcat -->
@@ -36,29 +49,29 @@
     <dependency>
       <groupId>javax.enterprise</groupId>
       <artifactId>cdi-api</artifactId>
-      <version>2.0-EDR1</version>
+      <version>${cdi.spec.version}</version>
     </dependency>
     <dependency>
       <groupId>org.jboss.weld.servlet</groupId>
       <artifactId>weld-servlet-core</artifactId>
-      <version>3.0.0.Alpha12</version>
+      <version>${weld-se-core.version}</version>
     </dependency>
     <dependency>
       <groupId>org.hibernate</groupId>
       <artifactId>hibernate-validator-cdi</artifactId>
-      <version>5.2.1.Final</version>
+      <version>${hibernate.validator.version}</version>
     </dependency>
 
     <!-- The MVC API + RI -->
     <dependency>
       <groupId>javax.mvc</groupId>
       <artifactId>javax.mvc-api</artifactId>
-      <version>1.0-edr2</version>
+      <version>${mvc.spec.version}</version>
     </dependency>
     <dependency>
-      <groupId>org.glassfish.ozark</groupId>
-      <artifactId>ozark</artifactId>
-      <version>1.0.0-m02</version>
+      <groupId>org.eclipse.krazo</groupId>
+      <artifactId>krazo-jersey</artifactId>
+      <version>${krazo.version}</version>
     </dependency>
 
     <!-- This example uses JSP as the view technology -->
