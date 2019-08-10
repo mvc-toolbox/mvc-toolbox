@@ -15,13 +15,22 @@
   <properties>
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
-    <mvc.spec.version>1.0-pr</mvc.spec.version>
-    <jaxrs.spec.version>2.0.1</jaxrs.spec.version>
-    <cdi.spec.version>1.2</cdi.spec.version>
-    <validation.spec.version>1.1.0.Final</validation.spec.version>
-    <jsp.spec.version>2.3.2-b02</jsp.spec.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
+    <mvc.spec.version>1.0-pfd</mvc.spec.version>
+    <krazo.version>1.0.0-SNAPSHOT</krazo.version>
+    <jaxrs.spec.version>2.1.1</jaxrs.spec.version>
+    <cdi.spec.version>2.0.SP1</cdi.spec.version>
+    <validation.spec.version>2.0.1.Final</validation.spec.version>
+    <hibernate.validator.version>5.2.1.Final</hibernate.validator.version>
+    <jsp.spec.version>2.3.3</jsp.spec.version>
+    <deltaspike.version>1.9.0</deltaspike.version>
+    <weld-se-core.version>3.1.2.Final</weld-se-core.version>
+    <jersey.version>2.29</jersey.version>
+    <mockito.version>3.0.0</mockito.version>
+    <junit.version>4.12</junit.version>
+    <javax.annotation-api.version>1.3.2</javax.annotation-api.version>
   </properties>
 
   <modules>
@@ -73,7 +82,7 @@
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-source-plugin</artifactId>
-            <version>3.0.0</version>
+            <version>3.1.0</version>
             <executions>
               <execution>
                 <id>attach-sources</id>
@@ -87,7 +96,7 @@
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-javadoc-plugin</artifactId>
-            <version>2.10.3</version>
+            <version>3.1.1</version>
             <executions>
               <execution>
                 <id>attach-javadocs</id>

@@ -4,7 +4,7 @@ import de.chkal.mvctoolbox.core.message.MvcMessage;
 import de.chkal.mvctoolbox.core.message.MvcMessages;
 
 import javax.inject.Inject;
-import javax.mvc.annotation.Controller;
+import javax.mvc.Controller;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;

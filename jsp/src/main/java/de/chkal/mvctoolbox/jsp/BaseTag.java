@@ -16,8 +16,8 @@ public abstract class BaseTag extends SimpleTagSupport {
 
       BindingResult bindingResult = getBean(BindingResult.class);
 
-      boolean hasBindingError = bindingResult.getBindingError(param) != null;
-      boolean hasValidationError = bindingResult.getBindingError(param) != null;
+      boolean hasBindingError = bindingResult.getErrors(param) != null;
+      boolean hasValidationError = bindingResult.getErrors(param) != null;
 
       return hasBindingError || hasValidationError;
 
