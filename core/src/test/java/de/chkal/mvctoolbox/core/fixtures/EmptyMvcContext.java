@@ -13,6 +13,8 @@ import javax.ws.rs.core.UriBuilder;
 /**
  * Empty MVC Context for integration testing. May be replaced with some Mock
  * during testing.
+ *
+ * @author Tobias Erdle
  */
 @RequestScoped
 public class EmptyMvcContext implements MvcContext {

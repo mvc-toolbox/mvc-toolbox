@@ -12,6 +12,8 @@ import javax.mvc.MvcContext;
 
 /**
  * Chain to resolve translations from different {@link TranslationResolver}.
+ *
+ * @author Tobias Erdle
  */
 @RequestScoped
 public class TranslationResolverChain {

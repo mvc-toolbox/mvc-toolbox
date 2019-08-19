@@ -6,6 +6,14 @@ import java.util.ResourceBundle;
 import javax.annotation.Priority;
 import javax.enterprise.context.ApplicationScoped;
 
+/**
+ * Resolves translations from a resource bundle with base name 'messages'.
+ *
+ * To use this resolver, minimum a 'messages.properties' file has to be placed within
+ * your resources directory.
+ *
+ * @author Tobias Erdle
+ */
 @ApplicationScoped
 @Priority(TranslationResolver.DEFAULT_PRIORITY)
 public class PropertiesTranslationResolver implements TranslationResolver {
