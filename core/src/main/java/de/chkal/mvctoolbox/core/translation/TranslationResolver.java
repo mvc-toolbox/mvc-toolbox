@@ -15,6 +15,11 @@ import java.util.Locale;
 public interface TranslationResolver {
 
   /**
+   * Default priority for imlpementations of the {@link TranslationResolver}.
+   */
+  int DEFAULT_PRIORITY = 500;
+
+  /**
    * Resolve the translation for a string key and the provided {@link Locale}.
    *
    * @param key the string key for which translations shall be resolved
@@ -22,5 +27,4 @@ public interface TranslationResolver {
    * @return the found translation or null, when the key doesn't exist
    */
   String resolve(final String key, final Locale locale);
-
 }
