@@ -19,4 +19,9 @@ public class EmbeddedTranslationResolver implements TranslationResolver {
   public String resolve(final String key, final Locale locale) {
     return "embedded.key".equals(key) ? "From embedded resolver" : null;
   }
+
+  @Override
+  public String resolve(final String key, final Locale locale, final Object... args) {
+    return resolve(key, locale);
+  }
 }

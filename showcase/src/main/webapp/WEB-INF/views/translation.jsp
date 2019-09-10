@@ -44,6 +44,24 @@
         </div>
     </div>
 
+    <div class="row">
+        <div class="col-md-12">
+            <h3>Usage of MessageFormat templates</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <p>
+                This translation makes use of the java.text.MessageFormat templates, which
+                leads to properties like <i>hello.withPlaceholder=Hello, {0} {1}!</i>
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <b>Key:</b> hello.withPlaceholder -> ${toolbox.t('hello.withPlaceholder', ['John', 'Doe'])}
+        </div>
+    </div>
 </div>
 </body>
 </html>

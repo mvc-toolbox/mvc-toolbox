@@ -36,28 +36,28 @@ public class TranslationResolverChainTest {
 
   @Test
   public void expectPlaceholderWhenNoTranslationResolverKnowsKey() {
-    final String translation = sytemUnderTest.resolve("my.unknown.key");
+    final String translation = sytemUnderTest.resolve("my.unknown.key", null);
 
     assertEquals("???my.unknown.key???", translation);
   }
 
   @Test
   public void expectTranslationFromDummyResolver3WhenResolver1AndResolver3KnowTheKey() {
-    final String translation = sytemUnderTest.resolve("my.key.1");
+    final String translation = sytemUnderTest.resolve("my.key.1", null);
 
     assertEquals("myFirstKeyFromDummyResolver3", translation);
   }
 
   @Test
   public void expectTranslationFromDummyResolver1WhenOnlyResolver1KnowsTheKey() {
-    final String translation = sytemUnderTest.resolve("my.unique.key");
+    final String translation = sytemUnderTest.resolve("my.unique.key", null);
 
     assertEquals("myUniqueKey", translation);
   }
 
   @Test
   public void expectTranslationFromDummyResolver2WhenResolver1AndResolver2KnowTheKey() {
-    final String translation = sytemUnderTest.resolve("my.key.2");
+    final String translation = sytemUnderTest.resolve("my.key.2", null);
 
     assertEquals("mySecondKeyFromDummyResolver2", translation);
   }
@@ -83,6 +83,11 @@ public class TranslationResolverChainTest {
     public String resolve(final String key, final Locale locale) {
       return TRANSLATIONS.get(key);
     }
+
+    @Override
+    public String resolve(final String key, final Locale locale, final Object... args) {
+      return null;
+    }
   }
 
   @Priority(TranslationResolver.DEFAULT_PRIORITY)
@@ -97,6 +102,11 @@ public class TranslationResolverChainTest {
     @Override
     public String resolve(final String key, final Locale locale) {
       return TRANSLATIONS.get(key);
+    }
+
+    @Override
+    public String resolve(final String key, final Locale locale, final Object... args) {
+      return null;
     }
   }
 
@@ -113,6 +123,11 @@ public class TranslationResolverChainTest {
     @Override
     public String resolve(final String key, final Locale locale) {
       return TRANSLATIONS.get(key);
+    }
+
+    @Override
+    public String resolve(final String key, final Locale locale, final Object... args) {
+      return null;
     }
   }
 }

@@ -30,8 +30,18 @@ public class TranslationResolverChainIT {
     when(mockMvcContext.getLocale()).thenReturn(Locale.GERMAN);
     systemUnderTest.setMvcContext(mockMvcContext);
 
-    final String translation = systemUnderTest.resolve("hello");
+    final String translation = systemUnderTest.resolve("hello", null);
 
     Assert.assertEquals("Hallo", translation);
+  }
+
+  @Test
+  public void expectTemplateTranslationIsUsedWhenArgsAreProvided() {
+    when(mockMvcContext.getLocale()).thenReturn(Locale.GERMAN);
+    systemUnderTest.setMvcContext(mockMvcContext);
+
+    final String translation = systemUnderTest.resolve("hello.placeholder", new Object[]{"John", "Doe"});
+
+    Assert.assertEquals("Hallo, John Doe!", translation);
   }
 }

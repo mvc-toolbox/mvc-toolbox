@@ -33,10 +33,12 @@ public class TranslationResolverChain {
    * Resolve the translation for a specific key.
    *
    * @param key the key for which a translation shall be resolved. Mustn't be null!
+   * @param args optional arguments which can be used to fill placeholders in translation templates. Can and should be null
+   * in case the translation has no placeholders
    * @return the found translation or a placeholder with the form of {@link #UNKNOWN_KEY_TEMPLATE}
    */
-  public String resolve(final String key) {
-    final String resolvedTranslation = resolveTranslation(key);
+  public String resolve(final String key, final Object... args) {
+    final String resolvedTranslation = resolveTranslation(key, args);
 
     return resolvedTranslation != null ? resolvedTranslation : formatUnknownKey(key);
   }
@@ -51,12 +53,12 @@ public class TranslationResolverChain {
     this.mvcContext = mvcContext;
   }
 
-  private String resolveTranslation(final String key) {
+  private String resolveTranslation(final String key, final Object... args) {
     final Locale requestLocale = mvcContext.getLocale();
 
     final List<TranslationResolver> sortedTranslationResolver = sortTranslationResolversByPriority(translationResolver);
     for (final TranslationResolver resolver : sortedTranslationResolver) {
-      final String translation = resolver.resolve(key, requestLocale);
+      final String translation = args == null ? resolver.resolve(key, requestLocale) : resolver.resolve(key, requestLocale, args);
 
       if (translation != null) {
         return translation;

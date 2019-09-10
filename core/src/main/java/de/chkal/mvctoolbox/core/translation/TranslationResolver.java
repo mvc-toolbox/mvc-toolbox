@@ -27,4 +27,15 @@ public interface TranslationResolver {
    * @return the found translation or null, when the key doesn't exist
    */
   String resolve(final String key, final Locale locale);
+
+  /**
+   * Resolve the translation for a string key and the given {@link Locale}. The translation may
+   * be a {@link java.text.MessageFormat} template which can be enriched with custom arguments.
+   *
+   * @param key the string key for which translations shall be resolved
+   * @param locale the {@link Locale} for which a translation is queried
+   * @param args an array of variable length containing placeholder values
+   * @return the found translation with filled placeholders or null, when the key doesn't exist
+   */
+  String resolve(final String key, final Locale locale, final Object... args);
 }

@@ -2,6 +2,7 @@ package de.chkal.mvctoolbox.core;
 
 import de.chkal.mvctoolbox.core.message.MvcMessages;
 import de.chkal.mvctoolbox.core.translation.TranslationResolverChain;
+import java.util.List;
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -26,6 +27,10 @@ public class Toolbox {
   }
 
   public String t(final String key) {
-    return translations.resolve(key);
+    return translations.resolve(key, null);
+  }
+
+  public String t(final String key, final List<Object> args) {
+    return translations.resolve(key, args.toArray());
   }
 }

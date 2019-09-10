@@ -46,4 +46,54 @@ public class PropertiesTranslationResolverTest {
 
     assertNull(translation);
   }
+
+  @Test(expected = NullPointerException.class)
+  public void resolveWithArgsExpectNullPointerExceptionWhenParamKeyIsNull() {
+    systemUnderTest.resolve(null, Locale.US, "John", "Doe");
+  }
+
+  @Test(expected = NullPointerException.class)
+  public void resolveWithArgsExpectNullPointerExceptionWhenParamLocaleIsNull() {
+    systemUnderTest.resolve("my.key", null, "John", "Doe");
+  }
+
+  @Test(expected = NullPointerException.class)
+  public void resolveWithArgsExpectNullPointerExceptionWhenParamArgsIsNull() {
+    systemUnderTest.resolve("my.key", Locale.US, null);
+  }
+
+  @Test
+  public void resolveWithArgsExpectDefaultTranslationWhenLocaleHasNoTranslations() {
+    final String translation = systemUnderTest.resolve("hello.placeholder", Locale.CANADA, "John", "Doe");
+
+    assertEquals("Hello, John Doe!", translation);
+  }
+
+  @Test
+  public void resolveWithArgsExpectNullWhenNoTranslationForKeyIsFound() {
+    final String translation = systemUnderTest.resolve("hello.withArgs", Locale.CANADA, "John", "Doe");
+
+    assertNull(translation);
+  }
+
+  @Test
+  public void resolveWithArgsExpectTranslationWhenLocaleHasTranslations() {
+    final String translation = systemUnderTest.resolve("hello.placeholder", Locale.GERMAN, "John", "Doe");
+
+    assertEquals("Hallo, John Doe!", translation);
+  }
+
+  @Test
+  public void resolveWithArgsExpectNoErrorWhenTooLessPlaceholdersAreInTemplate() {
+    final String translation = systemUnderTest.resolve("hello.tooLess", Locale.US, "John", "Doe");
+
+    assertEquals("Hello, John!", translation);
+  }
+
+  @Test
+  public void resolveWithArgsExpectNoErrorWhenTooManyPlaceholdersAreInTemplate() {
+    final String translation = systemUnderTest.resolve("hello.tooMany", Locale.US, "John", "Doe");
+
+    assertEquals("Hello, John Doe {2}!", translation);
+  }
 }
