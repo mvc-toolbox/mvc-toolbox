@@ -25,7 +25,7 @@ public class Toolbox {
     return messages;
   }
 
-  public TranslationResolverChain getTranslations() {
-    return translations;
+  public String t(final String key) {
+    return translations.resolve(key);
   }
 }

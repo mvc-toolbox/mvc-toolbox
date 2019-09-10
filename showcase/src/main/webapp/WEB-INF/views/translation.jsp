@@ -31,16 +31,16 @@
 
     <div class="row">
         <div class="col-md-6">
-            <b>Key:</b> greeting -> ${toolbox.translations.resolve('greeting')}
+            <b>Key:</b> greeting -> ${toolbox.t('greeting')}
         </div>
         <div class="col-md-6">
-            <b>Key:</b> hello.world -> ${toolbox.translations.resolve('hello.world')}
+            <b>Key:</b> hello.world -> ${toolbox.t('hello.world')}
         </div>
         <div class="col-md-6">
-            <b>Key from EmbeddedTranslationResolver:</b> embedded.key -> ${toolbox.translations.resolve('embedded.key')}
+            <b>Key from EmbeddedTranslationResolver:</b> embedded.key -> ${toolbox.t('embedded.key')}
         </div>
         <div class="col-md-6">
-            <b>Unknown key:</b> unknown.key -> ${toolbox.translations.resolve('unknown.key')}
+            <b>Unknown key:</b> unknown.key -> ${toolbox.t('unknown.key')}
         </div>
     </div>
 
