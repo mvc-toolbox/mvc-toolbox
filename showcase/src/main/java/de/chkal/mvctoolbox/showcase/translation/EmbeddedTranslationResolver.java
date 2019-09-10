@@ -1,8 +1,6 @@
 package de.chkal.mvctoolbox.showcase.translation;
 
 import de.chkal.mvctoolbox.core.translation.TranslationResolver;
-import java.util.Locale;
-import javax.annotation.Priority;
 import javax.enterprise.context.ApplicationScoped;
 
 /**
@@ -12,16 +10,15 @@ import javax.enterprise.context.ApplicationScoped;
  * @author Tobias Erdle
  */
 @ApplicationScoped
-@Priority(TranslationResolver.DEFAULT_PRIORITY + 1)
 public class EmbeddedTranslationResolver implements TranslationResolver {
 
   @Override
-  public String resolve(final String key, final Locale locale) {
+  public String resolve(final String key) {
     return "embedded.key".equals(key) ? "From embedded resolver" : null;
   }
 
   @Override
-  public String resolve(final String key, final Locale locale, final Object... args) {
-    return resolve(key, locale);
+  public String resolve(final String key, final Object... args) {
+    return resolve(key);
   }
 }

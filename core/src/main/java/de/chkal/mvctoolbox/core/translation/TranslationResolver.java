@@ -15,27 +15,24 @@ import java.util.Locale;
 public interface TranslationResolver {
 
   /**
-   * Default priority for imlpementations of the {@link TranslationResolver}.
-   */
-  int DEFAULT_PRIORITY = 500;
-
-  /**
-   * Resolve the translation for a string key and the provided {@link Locale}.
+   * Resolve the translation for a string key.
+   * <p>
+   * The {@link Locale} must be resolved by the implementation of this interface.
    *
    * @param key the string key for which translations shall be resolved
-   * @param locale the {@link Locale} for which a translation is queried
    * @return the found translation or null, when the key doesn't exist
    */
-  String resolve(final String key, final Locale locale);
+  String resolve(final String key);
 
   /**
-   * Resolve the translation for a string key and the given {@link Locale}. The translation may
+   * Resolve the translation for a string key. The translation may
    * be a {@link java.text.MessageFormat} template which can be enriched with custom arguments.
+   * <p>
+   * The {@link Locale} must be resolved by the implementation of this interface.
    *
    * @param key the string key for which translations shall be resolved
-   * @param locale the {@link Locale} for which a translation is queried
    * @param args an array of variable length containing placeholder values
    * @return the found translation with filled placeholders or null, when the key doesn't exist
    */
-  String resolve(final String key, final Locale locale, final Object... args);
+  String resolve(final String key, final Object... args);
 }

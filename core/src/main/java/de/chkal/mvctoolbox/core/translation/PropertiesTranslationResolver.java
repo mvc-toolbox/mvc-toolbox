@@ -4,42 +4,48 @@ import java.text.MessageFormat;
 import java.util.Locale;
 import java.util.Objects;
 import java.util.ResourceBundle;
-import javax.annotation.Priority;
-import javax.enterprise.context.ApplicationScoped;
+import javax.mvc.MvcContext;
 
 /**
- * Resolves translations from a resource bundle with base name 'messages'.
- *
- * To use this resolver, minimum a 'messages.properties' file has to be placed within
- * your resources directory.
+ * Resolves translations from a resource bundle with a configurable base name. The {@link Locale} for the
+ * processed request will be resolved by the applied {@link MvcContext}.
  *
  * @author Tobias Erdle
  */
-@ApplicationScoped
-@Priority(TranslationResolver.DEFAULT_PRIORITY)
 public class PropertiesTranslationResolver implements TranslationResolver {
 
-  private static final String DEFAULT_RESOURCE_BUNDLE = "messages";
+  private String resourceBundleName;
+  private MvcContext mvcContext;
 
-  @Override
-  public String resolve(final String key, final Locale locale) {
-    return resolveTranslation(key, locale);
+  public PropertiesTranslationResolver() {
+    // necessary for CDI
+  }
+
+  public PropertiesTranslationResolver(final String resourceBundleName, final MvcContext mvcContext) {
+    this.resourceBundleName = resourceBundleName;
+    this.mvcContext = mvcContext;
   }
 
   @Override
-  public String resolve(final String key, final Locale locale, final Object... args) {
+  public String resolve(final String key) {
+    return resolveTranslation(key, mvcContext.getLocale());
+  }
+
+  @Override
+  public String resolve(final String key, final Object... args) {
     Objects.requireNonNull(args, "Translation args mustn't be null");
 
-    final String template = resolveTranslation(key, locale);
+    final Locale requestLocale = mvcContext.getLocale();
+    final String template = resolveTranslation(key, requestLocale);
 
-    return template == null ? template : formatTranslationTemplate(locale, template, args);
+    return template == null ? template : formatTranslationTemplate(requestLocale, template, args);
   }
 
-  private static String resolveTranslation(final String key, final Locale locale) {
+  private String resolveTranslation(final String key, final Locale locale) {
     Objects.requireNonNull(key, "Translation key mustn't be null");
     Objects.requireNonNull(locale, "Translation locale mustn't be null");
 
-    final ResourceBundle resourceBundle = ResourceBundle.getBundle(DEFAULT_RESOURCE_BUNDLE, locale);
+    final ResourceBundle resourceBundle = ResourceBundle.getBundle(resourceBundleName, locale);
 
     return resourceBundle.containsKey(key) ? resourceBundle.getString(key) : null;
   }
