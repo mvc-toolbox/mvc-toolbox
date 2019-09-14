@@ -9,6 +9,9 @@ import java.util.Locale;
  * Through implementations of the {@link TranslationResolver} MVC views shall be able
  * to receive translations from different, prioritized sources, e.g. properties files or
  * a database.
+ * <br>
+ * <br>
+ * Please note, that the {@link Locale} gets resolved by the implementations of the {@link TranslationResolver} interface.
  *
  * @author Tobias Erdle
  */
