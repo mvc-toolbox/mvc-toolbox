@@ -17,10 +17,6 @@ public class PropertiesTranslationResolver implements TranslationResolver {
   private String resourceBundleName;
   private MvcContext mvcContext;
 
-  public PropertiesTranslationResolver() {
-    // necessary for CDI
-  }
-
   public PropertiesTranslationResolver(final String resourceBundleName, final MvcContext mvcContext) {
     this.resourceBundleName = resourceBundleName;
     this.mvcContext = mvcContext;

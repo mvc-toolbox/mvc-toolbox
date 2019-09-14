@@ -1,6 +1,7 @@
 package de.chkal.mvctoolbox.showcase.translation;
 
 import de.chkal.mvctoolbox.core.translation.PropertiesTranslationResolver;
+import de.chkal.mvctoolbox.core.translation.TranslationResolver;
 import javax.enterprise.context.ApplicationScoped;
 import javax.enterprise.inject.Produces;
 import javax.inject.Named;
@@ -18,14 +19,14 @@ public class AdditionalTranslationResolverFactory {
   @Produces
   @ApplicationScoped
   @Named("embedded")
-  public EmbeddedTranslationResolver embeddedTranslationResolver(MvcContext mvcContext) {
+  public TranslationResolver embeddedTranslationResolver(MvcContext mvcContext) {
     return new EmbeddedTranslationResolver();
   }
 
   @Produces
   @ApplicationScoped
   @Named("page1")
-  public PropertiesTranslationResolver page1Translations(MvcContext mvcContext) {
+  public TranslationResolver page1Translations(MvcContext mvcContext) {
     return new PropertiesTranslationResolver("page1", mvcContext);
   }
 }

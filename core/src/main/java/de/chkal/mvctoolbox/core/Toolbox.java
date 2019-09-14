@@ -3,6 +3,7 @@ package de.chkal.mvctoolbox.core;
 import de.chkal.mvctoolbox.core.message.MvcMessages;
 import de.chkal.mvctoolbox.core.translation.DefaultTranslationResolver;
 import de.chkal.mvctoolbox.core.translation.PropertiesTranslationResolver;
+import de.chkal.mvctoolbox.core.translation.TranslationResolver;
 import java.util.List;
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
@@ -22,7 +23,7 @@ public class Toolbox {
 
   @Inject
   @DefaultTranslationResolver
-  private PropertiesTranslationResolver translations;
+  private TranslationResolver translations;
 
   public MvcMessages getMessages() {
     return messages;

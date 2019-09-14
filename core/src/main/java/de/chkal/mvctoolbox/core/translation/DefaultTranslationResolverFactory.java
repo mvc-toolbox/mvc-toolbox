@@ -27,7 +27,7 @@ public class DefaultTranslationResolverFactory {
   @Produces
   @DefaultTranslationResolver
   @ApplicationScoped
-  public PropertiesTranslationResolver getDefaultTranslationResolver(final MvcContext mvcContext) {
+  public TranslationResolver getDefaultTranslationResolver(final MvcContext mvcContext) {
     return new PropertiesTranslationResolver("messages", mvcContext);
   }
 }
