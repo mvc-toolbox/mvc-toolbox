@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
@@ -30,37 +30,46 @@
 
   <dependencies>
 
+    <dependency>
+      <groupId>javax</groupId>
+      <artifactId>javaee-api</artifactId>
+      <version>8.0.1</version>
+      <scope>provided</scope>
+    </dependency>
+
+
     <!-- Required dependencies if you deploy to a plain Servlet container like Tomcat -->
-    <dependency>
-      <groupId>org.glassfish.jersey.containers</groupId>
-      <artifactId>jersey-container-servlet</artifactId>
-      <version>${jersey.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>org.glassfish.jersey.ext.cdi</groupId>
-      <artifactId>jersey-cdi1x</artifactId>
-      <version>${jersey.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>org.glassfish.jersey.ext</groupId>
-      <artifactId>jersey-bean-validation</artifactId>
-      <version>${jersey.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>javax.enterprise</groupId>
-      <artifactId>cdi-api</artifactId>
-      <version>${cdi.spec.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>org.jboss.weld.servlet</groupId>
-      <artifactId>weld-servlet-core</artifactId>
-      <version>${weld-se-core.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>org.hibernate</groupId>
-      <artifactId>hibernate-validator-cdi</artifactId>
-      <version>${hibernate.validator.version}</version>
-    </dependency>
+    <!--    -->
+    <!--    <dependency>-->
+    <!--      <groupId>org.glassfish.jersey.containers</groupId>-->
+    <!--      <artifactId>jersey-container-servlet</artifactId>-->
+    <!--      <version>${jersey.version}</version>-->
+    <!--    </dependency>-->
+    <!--    <dependency>-->
+    <!--      <groupId>org.glassfish.jersey.ext.cdi</groupId>-->
+    <!--      <artifactId>jersey-cdi1x</artifactId>-->
+    <!--      <version>${jersey.version}</version>-->
+    <!--    </dependency>-->
+    <!--    <dependency>-->
+    <!--      <groupId>org.glassfish.jersey.ext</groupId>-->
+    <!--      <artifactId>jersey-bean-validation</artifactId>-->
+    <!--      <version>${jersey.version}</version>-->
+    <!--    </dependency>-->
+    <!--    <dependency>-->
+    <!--      <groupId>javax.enterprise</groupId>-->
+    <!--      <artifactId>cdi-api</artifactId>-->
+    <!--      <version>${cdi.spec.version}</version>-->
+    <!--    </dependency>-->
+    <!--    <dependency>-->
+    <!--      <groupId>org.jboss.weld.servlet</groupId>-->
+    <!--      <artifactId>weld-servlet-core</artifactId>-->
+    <!--      <version>${weld-se-core.version}</version>-->
+    <!--    </dependency>-->
+    <!--    <dependency>-->
+    <!--      <groupId>org.hibernate</groupId>-->
+    <!--      <artifactId>hibernate-validator-cdi</artifactId>-->
+    <!--      <version>${hibernate.validator.version}</version>-->
+    <!--    </dependency>-->
 
     <!-- The MVC API + RI -->
     <dependency>
@@ -103,7 +112,7 @@
   </dependencies>
 
   <build>
-    <finalName>${project.artifactId}</finalName>
+    <finalName>showcase</finalName>
   </build>
 
 </project>

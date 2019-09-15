@@ -1,6 +1,10 @@
 package de.chkal.mvctoolbox.core;
 
 import de.chkal.mvctoolbox.core.message.MvcMessages;
+import de.chkal.mvctoolbox.core.translation.DefaultTranslationResolver;
+import de.chkal.mvctoolbox.core.translation.PropertiesTranslationResolver;
+import de.chkal.mvctoolbox.core.translation.TranslationResolver;
+import java.util.List;
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -17,8 +21,19 @@ public class Toolbox {
   @Inject
   private MvcMessages messages;
 
+  @Inject
+  @DefaultTranslationResolver
+  private TranslationResolver translations;
+
   public MvcMessages getMessages() {
     return messages;
   }
 
+  public String t(final String key) {
+    return translations.resolve(key);
+  }
+
+  public String t(final String key, final List<Object> args) {
+    return translations.resolve(key, args.toArray());
+  }
 }
