@@ -6,7 +6,7 @@
   <head>
     <meta charset="UTF-8">
     <title>MVC Toolbox - Message support</title>
-    <link href="${mvc.contextPath}/webjars/bootstrap/3.3.6/dist/css/bootstrap.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/webjars/bootstrap/3.3.6/dist/css/bootstrap.css" rel="stylesheet">
   </head>
   <body>
     <div class="container">
@@ -21,7 +21,7 @@
       </t:form>
 
       <p style="margin-top: 10px">
-        <a href="${mvc.contextPath}/">Back to index</a>
+        <a href="${pageContext.request.contextPath}/">Back to index</a>
       </p>
 
     </div>
