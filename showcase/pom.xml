@@ -15,28 +15,18 @@
   <name>MVC Toolbox - Showcase</name>
   <description>MVC Toolbox - Showcase</description>
 
-  <repositories>
-    <repository>
-      <id>sonatype-oss-snapshots</id>
-      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-      <releases>
-        <enabled>false</enabled>
-      </releases>
-      <snapshots>
-        <enabled>true</enabled>
-      </snapshots>
-    </repository>
-  </repositories>
+  <properties>
+    <jersey.version>2.20</jersey.version>
+  </properties>
 
   <dependencies>
 
     <dependency>
-      <groupId>javax</groupId>
-      <artifactId>javaee-api</artifactId>
-      <version>8.0.1</version>
+      <groupId>jakarta.platform</groupId>
+      <artifactId>jakarta.jakartaee-api</artifactId>
+      <version>8.0.0</version>
       <scope>provided</scope>
     </dependency>
-
 
     <!-- Required dependencies if you deploy to a plain Servlet container like Tomcat -->
     <!--    -->
