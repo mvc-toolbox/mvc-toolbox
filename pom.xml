@@ -18,8 +18,8 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-    <mvc.spec.version>1.0.0-RC1</mvc.spec.version>
-    <krazo.version>1.0.0-RC1</krazo.version>
+    <mvc.spec.version>1.0.0</mvc.spec.version>
+    <krazo.version>1.0.0</krazo.version>
     <jaxrs.spec.version>2.1.6</jaxrs.spec.version>
     <cdi.spec.version>2.0.2</cdi.spec.version>
     <validation.spec.version>2.0.2</validation.spec.version>
