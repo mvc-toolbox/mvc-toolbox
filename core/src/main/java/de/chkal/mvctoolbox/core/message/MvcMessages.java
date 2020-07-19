@@ -7,7 +7,7 @@ import java.util.List;
  * <p>Represents a list of messages to be displayed to the user.</p>
  *
  * <p>Instances implementing this interface must be injectable using
- * {@link javax.inject.Inject} and are {@link javax.mvc.annotation.RedirectScoped}.</p>
+ * {@link javax.inject.Inject} and are {@link javax.mvc.RedirectScoped}.</p>
  */
 public interface MvcMessages {
 
@@ -15,6 +15,7 @@ public interface MvcMessages {
    * Adds a new global info message.
    *
    * @param text The text of the message, must not be <code>null</code>
+   * @return self
    */
   MvcMessages add(String text);
 
@@ -23,6 +24,7 @@ public interface MvcMessages {
    *
    * @param severity The severity of the message, must not be <code>null</code>
    * @param text     The text of the message, must not be <code>null</code>
+   * @return self
    */
   MvcMessages add(MvcMessage.Severity severity, String text);
 
@@ -31,6 +33,7 @@ public interface MvcMessages {
    * constraint violation in the given binding result.
    *
    * @param bindingResult The binding result to create messages from, ust not be <code>null</code>
+   * @return self
    */
   MvcMessages add(BindingResult bindingResult);
 
@@ -38,6 +41,7 @@ public interface MvcMessages {
    * Adds the given message.
    *
    * @param message the message
+   * @return self
    */
   MvcMessages add(MvcMessage message);
 

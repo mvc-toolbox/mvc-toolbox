@@ -32,6 +32,7 @@ public class MvcMessage implements Serializable {
    * Creates a new global info message.
    *
    * @param text The text of the message, must not be null
+   * @return a new {@link MvcMessage} instance
    */
   public static MvcMessage info(String text) {
     return info(null, text);
@@ -42,6 +43,7 @@ public class MvcMessage implements Serializable {
    *
    * @param param The name of parameter this message refers to or null
    * @param text  The text of the message, must not be null
+   * @return a new {@link MvcMessage} instance
    */
   public static MvcMessage info(String param, String text) {
     return new MvcMessage(Severity.INFO, param, text);
@@ -51,6 +53,7 @@ public class MvcMessage implements Serializable {
    * Creates a new global warning message.
    *
    * @param text The text of the message, must not be null
+   * @return a new {@link MvcMessage} instance
    */
   public static MvcMessage warning(String text) {
     return warning(null, text);
@@ -61,6 +64,7 @@ public class MvcMessage implements Serializable {
    *
    * @param param The name of parameter this message refers to or null
    * @param text  The text of the message, must not be null
+   * @return a new {@link MvcMessage} instance
    */
   public static MvcMessage warning(String param, String text) {
     return new MvcMessage(Severity.WARNING, param, text);
@@ -70,6 +74,7 @@ public class MvcMessage implements Serializable {
    * Creates a new global error message.
    *
    * @param text The text of the message, must not be null
+   * @return a new {@link MvcMessage} instance
    */
   public static MvcMessage error(String text) {
     return error(null, text);
@@ -80,6 +85,7 @@ public class MvcMessage implements Serializable {
    *
    * @param param The name of parameter this message refers to or null
    * @param text  The text of the message, must not be null
+   * @return a new {@link MvcMessage} instance
    */
   public static MvcMessage error(String param, String text) {
     return new MvcMessage(Severity.ERROR, param, text);
