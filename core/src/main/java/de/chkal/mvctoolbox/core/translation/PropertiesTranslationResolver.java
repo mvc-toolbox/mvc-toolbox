@@ -41,7 +41,10 @@ public class PropertiesTranslationResolver implements TranslationResolver {
     Objects.requireNonNull(key, "Translation key mustn't be null");
     Objects.requireNonNull(locale, "Translation locale mustn't be null");
 
-    final ResourceBundle resourceBundle = ResourceBundle.getBundle(resourceBundleName, locale);
+    final ResourceBundle.Control control =
+      ResourceBundle.Control.getNoFallbackControl( ResourceBundle.Control.FORMAT_PROPERTIES );
+
+    final ResourceBundle resourceBundle = ResourceBundle.getBundle( resourceBundleName, locale, control );
 
     return resourceBundle.containsKey(key) ? resourceBundle.getString(key) : null;
   }
