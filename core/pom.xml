@@ -20,7 +20,7 @@
     <junit.version>4.13</junit.version>
     <mockito.version>3.2.4</mockito.version>
     <weld.version>3.1.3.Final</weld.version>
-    <jersey-common.version>2.29.1</jersey-common.version>
+    <jersey-common.version>2.34</jersey-common.version>
   </properties>
 
   <dependencies>
