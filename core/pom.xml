@@ -14,108 +14,72 @@
   <name>MVC Toolbox - Core</name>
   <description>MVC Toolbox - Core</description>
 
-  <properties>
-    <annotation-api.version>1.3.5</annotation-api.version>
-    <deltaspike.version>1.9.2</deltaspike.version>
-    <junit.version>4.13</junit.version>
-    <mockito.version>3.2.4</mockito.version>
-    <weld.version>3.1.3.Final</weld.version>
-    <jersey-common.version>2.29.1</jersey-common.version>
-  </properties>
-
   <dependencies>
     <dependency>
       <groupId>javax.mvc</groupId>
       <artifactId>javax.mvc-api</artifactId>
-      <version>${mvc.spec.version}</version>
-      <scope>provided</scope>
     </dependency>
 
     <dependency>
       <groupId>jakarta.ws.rs</groupId>
       <artifactId>jakarta.ws.rs-api</artifactId>
-      <version>${jaxrs.spec.version}</version>
-      <scope>provided</scope>
     </dependency>
 
     <dependency>
       <groupId>jakarta.enterprise</groupId>
       <artifactId>jakarta.enterprise.cdi-api</artifactId>
-      <version>${cdi.spec.version}</version>
-      <scope>provided</scope>
     </dependency>
 
     <dependency>
       <groupId>jakarta.validation</groupId>
       <artifactId>jakarta.validation-api</artifactId>
-      <version>${validation.spec.version}</version>
-      <scope>provided</scope>
     </dependency>
 
     <dependency>
       <groupId>jakarta.annotation</groupId>
       <artifactId>jakarta.annotation-api</artifactId>
-      <version>${annotation-api.version}</version>
-      <scope>provided</scope>
     </dependency>
 
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>${junit.version}</version>
-      <scope>test</scope>
     </dependency>
 
     <dependency>
       <groupId>org.mockito</groupId>
       <artifactId>mockito-core</artifactId>
-      <version>${mockito.version}</version>
-      <scope>test</scope>
     </dependency>
 
     <dependency>
       <groupId>org.apache.deltaspike.core</groupId>
       <artifactId>deltaspike-core-impl</artifactId>
-      <version>${deltaspike.version}</version>
-      <scope>test</scope>
     </dependency>
 
     <dependency>
       <groupId>org.apache.deltaspike.modules</groupId>
       <artifactId>deltaspike-test-control-module-api</artifactId>
-      <version>${deltaspike.version}</version>
-      <scope>test</scope>
     </dependency>
 
     <dependency>
       <groupId>org.apache.deltaspike.modules</groupId>
       <artifactId>deltaspike-test-control-module-impl</artifactId>
-      <version>${deltaspike.version}</version>
-      <scope>test</scope>
     </dependency>
 
     <dependency>
       <groupId>org.apache.deltaspike.cdictrl</groupId>
       <artifactId>deltaspike-cdictrl-weld</artifactId>
-      <version>${deltaspike.version}</version>
-      <scope>test</scope>
     </dependency>
 
     <dependency>
       <groupId>org.jboss.weld.se</groupId>
       <artifactId>weld-se-core</artifactId>
-      <version>${weld.version}</version>
-      <scope>test</scope>
     </dependency>
 
     <!-- needed to test UriBuilder -->
     <dependency>
       <groupId>org.glassfish.jersey.core</groupId>
       <artifactId>jersey-common</artifactId>
-      <version>${jersey-common.version}</version>
-      <scope>test</scope>
     </dependency>
-
   </dependencies>
 
   <build>
