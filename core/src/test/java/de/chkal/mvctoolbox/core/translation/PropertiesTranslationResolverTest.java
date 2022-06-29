@@ -6,7 +6,7 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 import java.util.Locale;
-import javax.mvc.MvcContext;
+import jakarta.mvc.MvcContext;
 import org.junit.Before;
 import org.junit.Test;
 

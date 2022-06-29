@@ -1,6 +1,6 @@
 package de.chkal.mvctoolbox.showcase.select;
 
-import javax.ws.rs.FormParam;
+import jakarta.ws.rs.FormParam;
 import java.util.ArrayList;
 import java.util.List;
 

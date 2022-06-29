@@ -1,7 +1,7 @@
 package de.chkal.mvctoolbox.jsp;
 
-import javax.servlet.jsp.JspContext;
-import javax.servlet.jsp.JspWriter;
+import jakarta.servlet.jsp.JspContext;
+import jakarta.servlet.jsp.JspWriter;
 import java.io.IOException;
 
 public class HtmlWriter {

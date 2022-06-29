@@ -1,6 +1,6 @@
 package de.chkal.mvctoolbox.showcase.redirect;
 
-import javax.ws.rs.FormParam;
+import jakarta.ws.rs.FormParam;
 
 public class RedirectForm {
 
