@@ -15,33 +15,24 @@
   <description>MVC Toolbox - JSP</description>
 
   <dependencies>
-
     <dependency>
       <groupId>javax.servlet.jsp</groupId>
       <artifactId>javax.servlet.jsp-api</artifactId>
-      <version>${jsp.spec.version}</version>
-      <scope>provided</scope>
     </dependency>
 
     <dependency>
       <groupId>javax.mvc</groupId>
       <artifactId>javax.mvc-api</artifactId>
-      <version>${mvc.spec.version}</version>
-      <scope>provided</scope>
     </dependency>
 
     <dependency>
       <groupId>jakarta.enterprise</groupId>
       <artifactId>jakarta.enterprise.cdi-api</artifactId>
-      <version>${cdi.spec.version}</version>
-      <scope>provided</scope>
     </dependency>
 
     <dependency>
       <groupId>jakarta.validation</groupId>
       <artifactId>jakarta.validation-api</artifactId>
-      <version>${validation.spec.version}</version>
-      <scope>provided</scope>
     </dependency>
 
     <dependency>
@@ -49,7 +40,5 @@
       <artifactId>mvc-toolbox-core</artifactId>
       <version>${project.version}</version>
     </dependency>
-
   </dependencies>
-
 </project>
