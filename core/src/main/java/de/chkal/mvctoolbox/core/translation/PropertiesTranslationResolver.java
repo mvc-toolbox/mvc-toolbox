@@ -4,7 +4,7 @@ import java.text.MessageFormat;
 import java.util.Locale;
 import java.util.Objects;
 import java.util.ResourceBundle;
-import javax.mvc.MvcContext;
+import jakarta.mvc.MvcContext;
 
 /**
  * Resolves translations from a resource bundle with a configurable base name. The {@link Locale} for the

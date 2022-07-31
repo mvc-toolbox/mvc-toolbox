@@ -4,7 +4,7 @@ import de.chkal.mvctoolbox.jsp.ClassList;
 import de.chkal.mvctoolbox.jsp.DynamicBaseTag;
 import de.chkal.mvctoolbox.jsp.HtmlWriter;
 
-import javax.servlet.jsp.JspException;
+import jakarta.servlet.jsp.JspException;
 import java.io.IOException;
 
 public class CheckboxTag extends DynamicBaseTag {

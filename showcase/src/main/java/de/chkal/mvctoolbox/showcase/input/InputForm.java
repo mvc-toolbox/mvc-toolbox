@@ -1,8 +1,8 @@
 package de.chkal.mvctoolbox.showcase.input;
 
-import javax.validation.constraints.Size;
+import jakarta.validation.constraints.Size;
 
-import javax.ws.rs.FormParam;
+import jakarta.ws.rs.FormParam;
 
 public class InputForm {
 

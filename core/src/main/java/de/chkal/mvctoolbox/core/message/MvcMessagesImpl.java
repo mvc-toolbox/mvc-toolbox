@@ -1,15 +1,15 @@
 package de.chkal.mvctoolbox.core.message;
 
-import javax.mvc.RedirectScoped;
-import javax.mvc.binding.BindingResult;
+import jakarta.mvc.RedirectScoped;
+import jakarta.mvc.binding.BindingResult;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
-import javax.validation.ConstraintViolation;
-import javax.ws.rs.FormParam;
+import jakarta.validation.ConstraintViolation;
+import jakarta.ws.rs.FormParam;
 
 @RedirectScoped
 public class MvcMessagesImpl implements Serializable, MvcMessages {

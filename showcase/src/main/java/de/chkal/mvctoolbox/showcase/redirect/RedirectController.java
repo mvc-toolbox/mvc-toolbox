@@ -2,10 +2,10 @@ package de.chkal.mvctoolbox.showcase.redirect;
 
 import de.chkal.mvctoolbox.core.redirect.Redirect;
 
-import javax.inject.Inject;
-import javax.mvc.Models;
-import javax.mvc.Controller;
-import javax.ws.rs.*;
+import jakarta.inject.Inject;
+import jakarta.mvc.Models;
+import jakarta.mvc.Controller;
+import jakarta.ws.rs.*;
 
 @Controller
 @Path("/redirect/{param1}")

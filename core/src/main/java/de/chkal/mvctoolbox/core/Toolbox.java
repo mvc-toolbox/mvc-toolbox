@@ -2,12 +2,12 @@ package de.chkal.mvctoolbox.core;
 
 import de.chkal.mvctoolbox.core.message.MvcMessages;
 import de.chkal.mvctoolbox.core.translation.DefaultTranslationResolver;
-import de.chkal.mvctoolbox.core.translation.PropertiesTranslationResolver;
 import de.chkal.mvctoolbox.core.translation.TranslationResolver;
+import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.inject.Inject;
+import jakarta.inject.Named;
+
 import java.util.List;
-import javax.enterprise.context.ApplicationScoped;
-import javax.inject.Inject;
-import javax.inject.Named;
 
 /**
  * This class is the only one annotated with {@link Named}. This way the library

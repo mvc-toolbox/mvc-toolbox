@@ -2,10 +2,10 @@ package de.chkal.mvctoolbox.showcase.translation;
 
 import de.chkal.mvctoolbox.core.translation.PropertiesTranslationResolver;
 import de.chkal.mvctoolbox.core.translation.TranslationResolver;
-import javax.enterprise.context.ApplicationScoped;
-import javax.enterprise.inject.Produces;
-import javax.inject.Named;
-import javax.mvc.MvcContext;
+import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.enterprise.inject.Produces;
+import jakarta.inject.Named;
+import jakarta.mvc.MvcContext;
 
 /**
  * Example for the ability to add custom {@link de.chkal.mvctoolbox.core.translation.TranslationResolver} by adding

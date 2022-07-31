@@ -3,8 +3,8 @@ package de.chkal.mvctoolbox.jsp.tag;
 import de.chkal.mvctoolbox.jsp.DynamicBaseTag;
 import de.chkal.mvctoolbox.jsp.HtmlWriter;
 
-import javax.mvc.MvcContext;
-import javax.servlet.jsp.JspException;
+import jakarta.mvc.MvcContext;
+import jakarta.servlet.jsp.JspException;
 import java.io.IOException;
 
 public class FormTag extends DynamicBaseTag {

@@ -1,13 +1,13 @@
 package de.chkal.mvctoolbox.core.message;
 
-import javax.mvc.binding.BindingResult;
+import jakarta.mvc.binding.BindingResult;
 import java.util.List;
 
 /**
  * <p>Represents a list of messages to be displayed to the user.</p>
  *
  * <p>Instances implementing this interface must be injectable using
- * {@link javax.inject.Inject} and are {@link javax.mvc.RedirectScoped}.</p>
+ * {@link jakarta.inject.Inject} and are {@link jakarta.mvc.RedirectScoped}.</p>
  */
 public interface MvcMessages {
 

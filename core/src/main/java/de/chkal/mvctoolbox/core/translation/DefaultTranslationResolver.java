@@ -5,7 +5,7 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 import java.util.List;
-import javax.inject.Qualifier;
+import jakarta.inject.Qualifier;
 
 /**
  * Qualifier to identify the default bean for resolving translations via the {@link de.chkal.mvctoolbox.core.Toolbox#t(String)}

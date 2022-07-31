@@ -1,7 +1,7 @@
 package de.chkal.mvctoolbox.jsp;
 
-import javax.servlet.jsp.JspException;
-import javax.servlet.jsp.tagext.DynamicAttributes;
+import jakarta.servlet.jsp.JspException;
+import jakarta.servlet.jsp.tagext.DynamicAttributes;
 import java.io.IOException;
 import java.util.*;
 

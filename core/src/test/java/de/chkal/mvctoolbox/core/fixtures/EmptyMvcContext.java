@@ -3,12 +3,12 @@ package de.chkal.mvctoolbox.core.fixtures;
 import java.net.URI;
 import java.util.Locale;
 import java.util.Map;
-import javax.enterprise.context.RequestScoped;
-import javax.mvc.MvcContext;
-import javax.mvc.security.Csrf;
-import javax.mvc.security.Encoders;
-import javax.ws.rs.core.Configuration;
-import javax.ws.rs.core.UriBuilder;
+import jakarta.enterprise.context.RequestScoped;
+import jakarta.mvc.MvcContext;
+import jakarta.mvc.security.Csrf;
+import jakarta.mvc.security.Encoders;
+import jakarta.ws.rs.core.Configuration;
+import jakarta.ws.rs.core.UriBuilder;
 
 /**
  * Empty MVC Context for integration testing. May be replaced with some Mock

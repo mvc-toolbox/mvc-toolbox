@@ -6,7 +6,7 @@
   <head>
     <meta charset="UTF-8">
     <title>MVC Toolbox - HTML Select</title>
-    <link href="${pageContext.request.contextPath}/webjars/bootstrap/3.3.6/dist/css/bootstrap.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/webjars/bootstrap/5.1.3/dist/css/bootstrap.css" rel="stylesheet">
     <style>
       input.invalid {
         background-color: #f2dede !important;

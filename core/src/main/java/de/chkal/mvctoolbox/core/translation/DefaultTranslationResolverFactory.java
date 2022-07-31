@@ -1,8 +1,8 @@
 package de.chkal.mvctoolbox.core.translation;
 
-import javax.enterprise.context.ApplicationScoped;
-import javax.enterprise.inject.Produces;
-import javax.mvc.MvcContext;
+import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.enterprise.inject.Produces;
+import jakarta.mvc.MvcContext;
 
 /**
  * Factory for initializing the default translation resolver for the {@link de.chkal.mvctoolbox.core.Toolbox}.

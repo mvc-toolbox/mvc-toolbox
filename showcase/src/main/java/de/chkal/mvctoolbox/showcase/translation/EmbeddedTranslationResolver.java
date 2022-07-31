@@ -1,7 +1,7 @@
 package de.chkal.mvctoolbox.showcase.translation;
 
 import de.chkal.mvctoolbox.core.translation.TranslationResolver;
-import javax.enterprise.context.ApplicationScoped;
+import jakarta.enterprise.context.ApplicationScoped;
 
 /**
  * Simple custom {@link TranslationResolver} to receive a translation from an embedded
