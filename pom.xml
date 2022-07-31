@@ -27,7 +27,7 @@
     <weld-se-core.version>3.1.2.Final</weld-se-core.version>
 
     <jaxrs.spec.version>2.1.6</jaxrs.spec.version>
-    <jersey.version>2.29.1</jersey.version>
+    <jersey.version>2.34</jersey.version>
 
     <mvc.spec.version>1.0.0</mvc.spec.version>
     <krazo.version>1.0.0</krazo.version>
