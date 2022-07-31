@@ -6,7 +6,7 @@
   <parent>
     <groupId>de.chkal.mvc-toolbox</groupId>
     <artifactId>mvc-toolbox-parent</artifactId>
-    <version>0.5-SNAPSHOT</version>
+    <version>1.0.0</version>
   </parent>
 
   <artifactId>mvc-toolbox-core</artifactId>
