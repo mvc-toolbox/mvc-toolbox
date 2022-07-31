@@ -59,13 +59,14 @@
     <dependency>
       <groupId>jakarta.mvc</groupId>
       <artifactId>jakarta.mvc-api</artifactId>
+        <scope>compile</scope>
     </dependency>
 
-    <dependency>
-      <groupId>org.eclipse.krazo</groupId>
-      <artifactId>krazo-jersey</artifactId>
-      <version>${krazo.version}</version>
-    </dependency>
+<!--    <dependency>-->
+<!--      <groupId>org.eclipse.krazo</groupId>-->
+<!--      <artifactId>krazo-jersey</artifactId>-->
+<!--      <version>${krazo.version}</version>-->
+<!--    </dependency>-->
 
     <!-- This example uses JSP as the view technology -->
     <dependency>
@@ -98,4 +99,41 @@
     <finalName>showcase</finalName>
   </build>
 
+    <profiles>
+        <profile>
+            <id>wildfly</id>
+            <dependencies>
+                <dependency>
+                    <groupId>org.eclipse.krazo</groupId>
+                    <artifactId>krazo-resteasy</artifactId>
+                    <version>${krazo.version}</version>
+                </dependency>
+            </dependencies>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.wildfly.plugins</groupId>
+                        <artifactId>wildfly-jar-maven-plugin</artifactId>
+                        <version>7.0.1.Final</version>
+                        <configuration>
+                            <feature-pack-location>
+                                wildfly-preview@maven(org.jboss.universe:community-universe)#26.1.1.Final
+                            </feature-pack-location>
+                            <layers>
+                                <layer>jaxrs-server</layer>
+                            </layers>
+<!--                            Enable for debug logging-->
+<!--                            <cli-sessions>-->
+<!--                                <cli-session>-->
+<!--                                    <script-files>-->
+<!--                                        <script>./scripts/logging.cli</script>-->
+<!--                                    </script-files>-->
+<!--                                </cli-session>-->
+<!--                            </cli-sessions>-->
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 </project>
