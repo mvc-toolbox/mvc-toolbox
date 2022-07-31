@@ -42,7 +42,7 @@
     <deltaspike.version>1.9.0</deltaspike.version>
 
     <mockito.version>3.0.0</mockito.version>
-    <junit.version>4.12</junit.version>
+    <junit.version>4.13.1</junit.version>
   </properties>
 
   <modules>
