@@ -36,6 +36,7 @@
 
     <jsp.spec.version>3.0.0</jsp.spec.version>
     <jstl.version>2.0.0</jstl.version>
+    <jstl-impl.version>2.0.0</jstl-impl.version>
     <bootstrap.version>5.1.3</bootstrap.version>
 
     <mockito.version>4.6.1</mockito.version>
@@ -106,6 +107,13 @@
       </dependency>
 
       <dependency>
+        <groupId>org.glassfish.web</groupId>
+        <artifactId>jakarta.servlet.jsp.jstl</artifactId>
+        <version>${jstl-impl.version}</version>
+        <scope>provided</scope>
+      </dependency>
+
+      <dependency>
         <groupId>jakarta.mvc</groupId>
         <artifactId>jakarta.mvc-api</artifactId>
         <version>${mvc.spec.version}</version>
@@ -146,6 +154,45 @@
         <version>${bootstrap.version}</version>
       </dependency>
 
+      <!-- Showcase dependencies -->
+
+      <dependency>
+        <groupId>org.glassfish.jersey.core</groupId>
+        <artifactId>jersey-server</artifactId>
+        <version>${jersey.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.glassfish.jersey.containers</groupId>
+        <artifactId>jersey-container-servlet</artifactId>
+        <version>${jersey.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.glassfish.jersey.inject</groupId>
+        <artifactId>jersey-hk2</artifactId>
+        <version>${jersey.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.glassfish.jersey.ext</groupId>
+        <artifactId>jersey-bean-validation</artifactId>
+        <version>${jersey.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.glassfish.jersey.ext.cdi</groupId>
+        <artifactId>jersey-cdi1x-servlet</artifactId>
+        <version>${jersey.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.jboss.weld.servlet</groupId>
+        <artifactId>weld-servlet-core</artifactId>
+        <version>${weld.version}</version>
+      </dependency>
+
+      <!-- Test dependencies -->
       <dependency>
         <groupId>junit</groupId>
         <artifactId>junit</artifactId>
@@ -196,6 +243,18 @@
         <plugin>
           <artifactId>maven-surefire-plugin</artifactId>
           <version>3.0.0-M7</version>
+        </plugin>
+
+        <plugin>
+          <groupId>org.codehaus.cargo</groupId>
+          <artifactId>cargo-maven3-plugin</artifactId>
+          <version>1.9.13</version>
+        </plugin>
+
+        <plugin>
+          <groupId>org.wildfly.plugins</groupId>
+          <artifactId>wildfly-jar-maven-plugin</artifactId>
+          <version>7.0.1.Final</version>
         </plugin>
       </plugins>
     </pluginManagement>

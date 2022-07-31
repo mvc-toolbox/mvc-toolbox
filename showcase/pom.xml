@@ -22,51 +22,11 @@
       <artifactId>jakarta.jakartaee-api</artifactId>
     </dependency>
 
-    <!-- Required dependencies if you deploy to a plain Servlet container like Tomcat -->
-    <!--    -->
-    <!--    <dependency>-->
-    <!--      <groupId>org.glassfish.jersey.containers</groupId>-->
-    <!--      <artifactId>jersey-container-servlet</artifactId>-->
-    <!--      <version>${jersey.version}</version>-->
-    <!--    </dependency>-->
-    <!--    <dependency>-->
-    <!--      <groupId>org.glassfish.jersey.ext.cdi</groupId>-->
-    <!--      <artifactId>jersey-cdi1x</artifactId>-->
-    <!--      <version>${jersey.version}</version>-->
-    <!--    </dependency>-->
-    <!--    <dependency>-->
-    <!--      <groupId>org.glassfish.jersey.ext</groupId>-->
-    <!--      <artifactId>jersey-bean-validation</artifactId>-->
-    <!--      <version>${jersey.version}</version>-->
-    <!--    </dependency>-->
-    <!--    <dependency>-->
-    <!--      <groupId>javax.enterprise</groupId>-->
-    <!--      <artifactId>cdi-api</artifactId>-->
-    <!--      <version>${cdi.spec.version}</version>-->
-    <!--    </dependency>-->
-    <!--    <dependency>-->
-    <!--      <groupId>org.jboss.weld.servlet</groupId>-->
-    <!--      <artifactId>weld-servlet-core</artifactId>-->
-    <!--      <version>${weld-se-core.version}</version>-->
-    <!--    </dependency>-->
-    <!--    <dependency>-->
-    <!--      <groupId>org.hibernate</groupId>-->
-    <!--      <artifactId>hibernate-validator-cdi</artifactId>-->
-    <!--      <version>${hibernate.validator.version}</version>-->
-    <!--    </dependency>-->
-
-    <!-- The MVC API + RI -->
     <dependency>
       <groupId>jakarta.mvc</groupId>
       <artifactId>jakarta.mvc-api</artifactId>
         <scope>compile</scope>
     </dependency>
-
-<!--    <dependency>-->
-<!--      <groupId>org.eclipse.krazo</groupId>-->
-<!--      <artifactId>krazo-jersey</artifactId>-->
-<!--      <version>${krazo.version}</version>-->
-<!--    </dependency>-->
 
     <!-- This example uses JSP as the view technology -->
     <dependency>
@@ -101,6 +61,123 @@
 
     <profiles>
         <profile>
+            <id>jersey</id>
+            <dependencies>
+                <dependency>
+                    <groupId>org.eclipse.krazo</groupId>
+                    <artifactId>krazo-jersey</artifactId>
+                    <version>${krazo.version}</version>
+                </dependency>
+            </dependencies>
+        </profile>
+
+        <profile>
+            <id>resteasy</id>
+            <dependencies>
+                <dependency>
+                    <groupId>org.eclipse.krazo</groupId>
+                    <artifactId>krazo-resteasy</artifactId>
+                    <version>${krazo.version}</version>
+                </dependency>
+            </dependencies>
+        </profile>
+
+        <profile>
+            <id>tomcat</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <dependencies>
+                <dependency>
+                    <groupId>jakarta.servlet.jsp.jstl</groupId>
+                    <artifactId>jakarta.servlet.jsp.jstl-api</artifactId>
+                    <scope>compile</scope>
+                </dependency>
+
+                <dependency>
+                    <groupId>org.glassfish.web</groupId>
+                    <artifactId>jakarta.servlet.jsp.jstl</artifactId>
+                    <scope>compile</scope>
+                </dependency>
+
+                <dependency>
+                    <groupId>jakarta.ws.rs</groupId>
+                    <artifactId>jakarta.ws.rs-api</artifactId>
+                    <scope>compile</scope>
+                </dependency>
+
+                <dependency>
+                    <groupId>org.glassfish.jersey.core</groupId>
+                    <artifactId>jersey-server</artifactId>
+                </dependency>
+
+                <dependency>
+                    <groupId>org.glassfish.jersey.core</groupId>
+                    <artifactId>jersey-common</artifactId>
+                    <scope>compile</scope>
+                </dependency>
+
+                <dependency>
+                    <groupId>org.glassfish.jersey.containers</groupId>
+                    <artifactId>jersey-container-servlet</artifactId>
+                </dependency>
+
+                <dependency>
+                    <groupId>org.glassfish.jersey.inject</groupId>
+                    <artifactId>jersey-hk2</artifactId>
+                </dependency>
+
+                <dependency>
+                    <groupId>jakarta.validation</groupId>
+                    <artifactId>jakarta.validation-api</artifactId>
+                    <scope>compile</scope>
+                </dependency>
+
+                <dependency>
+                    <groupId>org.glassfish.jersey.ext</groupId>
+                    <artifactId>jersey-bean-validation</artifactId>
+                </dependency>
+
+                <dependency>
+                    <groupId>jakarta.enterprise</groupId>
+                    <artifactId>jakarta.enterprise.cdi-api</artifactId>
+                    <scope>compile</scope>
+                </dependency>
+
+                <dependency>
+                    <groupId>org.jboss.weld.servlet</groupId>
+                    <artifactId>weld-servlet-core</artifactId>
+                    <scope>compile</scope>
+                </dependency>
+
+                <dependency>
+                    <groupId>org.glassfish.jersey.ext.cdi</groupId>
+                    <artifactId>jersey-cdi1x-servlet</artifactId>
+                </dependency>
+
+                <dependency>
+                    <groupId>org.eclipse.krazo</groupId>
+                    <artifactId>krazo-jersey</artifactId>
+                    <version>${krazo.version}</version>
+                </dependency>
+            </dependencies>
+            <build>
+                <!-- To be deployed as context root -->
+                <finalName>ROOT</finalName>
+                <plugins>
+                    <plugin>
+                        <groupId>org.codehaus.cargo</groupId>
+                        <artifactId>cargo-maven3-plugin</artifactId>
+                        <configuration>
+                            <containerId>tomcat10x</containerId>
+                            <containerUrl>https://dlcdn.apache.org/tomcat/tomcat-10/v10.0.23/bin/apache-tomcat-10.0.23.zip</containerUrl>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+
+        <profile>
             <id>wildfly</id>
             <dependencies>
                 <dependency>
@@ -114,7 +191,6 @@
                     <plugin>
                         <groupId>org.wildfly.plugins</groupId>
                         <artifactId>wildfly-jar-maven-plugin</artifactId>
-                        <version>7.0.1.Final</version>
                         <configuration>
                             <feature-pack-location>
                                 wildfly-preview@maven(org.jboss.universe:community-universe)#26.1.1.Final
