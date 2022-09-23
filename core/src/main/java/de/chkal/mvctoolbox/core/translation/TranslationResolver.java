@@ -17,25 +17,30 @@ import java.util.Locale;
  */
 public interface TranslationResolver {
 
-  /**
-   * Resolve the translation for a string key.
-   * <p>
-   * The {@link Locale} must be resolved by the implementation of this interface.
-   *
-   * @param key the string key for which translations shall be resolved
-   * @return the found translation or null, when the key doesn't exist
-   */
-  String resolve(final String key);
+	/**
+	 * The template for the placeholder in case a language key doesn't exist.
+	 */
+	String PLACEHOLDER_TEMPLATE = "??? %s ???";
 
-  /**
-   * Resolve the translation for a string key. The translation may
-   * be a {@link java.text.MessageFormat} template which can be enriched with custom arguments.
-   * <p>
-   * The {@link Locale} must be resolved by the implementation of this interface.
-   *
-   * @param key the string key for which translations shall be resolved
-   * @param args an array of variable length containing placeholder values
-   * @return the found translation with filled placeholders or null, when the key doesn't exist
-   */
-  String resolve(final String key, final Object... args);
+	/**
+	 * Resolve the translation for a string key.
+	 * <p>
+	 * The {@link Locale} must be resolved by the implementation of this interface.
+	 *
+	 * @param key the string key for which translations shall be resolved
+	 * @return the found translation or a placeholder <code>??? keyname ???</code>, when the key doesn't exist
+	 */
+	String resolve(final String key);
+
+	/**
+	 * Resolve the translation for a string key. The translation may
+	 * be a {@link java.text.MessageFormat} template which can be enriched with custom arguments.
+	 * <p>
+	 * The {@link Locale} must be resolved by the implementation of this interface.
+	 *
+	 * @param key  the string key for which translations shall be resolved
+	 * @param args an array of variable length containing placeholder values
+	 * @return the found translation with filled placeholders or a placeholder <code>??? keyname ???</code>, when the key doesn't exist
+	 */
+	String resolve(final String key, final Object... args);
 }

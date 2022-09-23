@@ -1,10 +1,11 @@
 package de.chkal.mvctoolbox.core.translation;
 
+import jakarta.mvc.MvcContext;
+
 import java.text.MessageFormat;
 import java.util.Locale;
 import java.util.Objects;
 import java.util.ResourceBundle;
-import jakarta.mvc.MvcContext;
 
 /**
  * Resolves translations from a resource bundle with a configurable base name. The {@link Locale} for the
@@ -34,7 +35,7 @@ public class PropertiesTranslationResolver implements TranslationResolver {
     final Locale requestLocale = mvcContext.getLocale();
     final String template = resolveTranslation(key, requestLocale);
 
-    return template == null ? template : formatTranslationTemplate(requestLocale, template, args);
+    return template.equals(formatPlaceholder(key)) ? template : formatTranslationTemplate(requestLocale, template, args);
   }
 
   private String resolveTranslation(final String key, final Locale locale) {
@@ -46,12 +47,16 @@ public class PropertiesTranslationResolver implements TranslationResolver {
 
     final ResourceBundle resourceBundle = ResourceBundle.getBundle( resourceBundleName, locale, control );
 
-    return resourceBundle.containsKey(key) ? resourceBundle.getString(key) : null;
+    return resourceBundle.containsKey(key) ? resourceBundle.getString(key) : formatPlaceholder(key);
   }
 
   private static String formatTranslationTemplate(final Locale locale, final String template, final Object[] args) {
     final MessageFormat formatter = new MessageFormat(template, locale);
 
     return formatter.format(args);
+  }
+
+  private static String formatPlaceholder(final String key) {
+    return String.format(PLACEHOLDER_TEMPLATE, key);
   }
 }
