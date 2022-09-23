@@ -41,6 +41,7 @@
 
     <mockito.version>4.6.1</mockito.version>
     <junit.version>4.13.2</junit.version>
+    <assertj.version>3.23.1</assertj.version>
   </properties>
 
   <modules>
@@ -204,6 +205,13 @@
         <groupId>org.mockito</groupId>
         <artifactId>mockito-core</artifactId>
         <version>${mockito.version}</version>
+        <scope>test</scope>
+      </dependency>
+
+      <dependency>
+        <groupId>org.assertj</groupId>
+        <artifactId>assertj-core</artifactId>
+        <version>${assertj.version}</version>
         <scope>test</scope>
       </dependency>
 
