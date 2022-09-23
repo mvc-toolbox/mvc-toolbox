@@ -49,7 +49,7 @@ public class PropertiesTranslationResolverTest {
     when(mvcContext.getLocale()).thenReturn(Locale.GERMAN);
     final String translation = systemUnderTest.resolve("unknown");
 
-    assertNull(translation);
+    assertEquals("??? unknown ???", translation);
   }
 
   @Test(expected = NullPointerException.class)
@@ -75,7 +75,7 @@ public class PropertiesTranslationResolverTest {
     when(mvcContext.getLocale()).thenReturn(Locale.US);
     final String translation = systemUnderTest.resolve("hello.withArgs", "John", "Doe");
 
-    assertNull(translation);
+    assertEquals("??? hello.withArgs ???", translation);
   }
 
   @Test
