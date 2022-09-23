@@ -159,4 +159,16 @@ public class MvcMessage implements Serializable {
     return param == null;
   }
 
+  @Override
+  public boolean equals(final Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+    final MvcMessage that = (MvcMessage) o;
+    return severity == that.severity && Objects.equals(param, that.param) && Objects.equals(text, that.text);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(severity, param, text);
+  }
 }

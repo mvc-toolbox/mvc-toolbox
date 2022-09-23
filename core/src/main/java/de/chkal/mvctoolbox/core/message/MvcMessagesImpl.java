@@ -35,10 +35,6 @@ public class MvcMessagesImpl implements Serializable, MvcMessages {
         .map(e -> new MvcMessage(MvcMessage.Severity.ERROR, e.getParamName(), e.getMessage()))
         .forEach(this::add);
 
-    bindingResult.getAllErrors().stream()
-        .map(e -> new MvcMessage(MvcMessage.Severity.ERROR, e.getParamName(), e.getMessage()))
-        .forEach(this::add);
-
     return this;
   }
 
