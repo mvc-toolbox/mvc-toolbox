@@ -146,4 +146,10 @@
     </attribute>
   </tag>
 
+  <tag>
+    <description>Tag for creating the hidden input required for CSRF protection in forms.</description>
+    <name>csrf</name>
+    <tag-class>de.chkal.mvctoolbox.jsp.tag.CsrfTag</tag-class>
+    <body-content>empty</body-content>
+  </tag>
 </taglib>
