@@ -3,16 +3,22 @@ package de.chkal.mvctoolbox.jsp;
 import jakarta.servlet.jsp.JspContext;
 import jakarta.servlet.jsp.JspWriter;
 import java.io.IOException;
+import java.io.StringWriter;
+import java.io.Writer;
 
 public class HtmlWriter {
 
-  private final JspWriter writer;
+  private final Writer writer;
 
   public HtmlWriter(JspContext context) {
     this(context.getOut());
   }
 
   public HtmlWriter(JspWriter writer) {
+    this.writer = writer;
+  }
+
+  public HtmlWriter(final StringWriter writer) {
     this.writer = writer;
   }
 
@@ -57,5 +63,18 @@ public class HtmlWriter {
   public HtmlWriter write(String text) throws IOException {
     writer.write(text);
     return this;
+  }
+
+  /**
+   * Returns the output of the {@link #writer} if possible.
+   *
+   * @return the output as String when {@link #writer} is a {@link StringWriter} or <code>null</code> in any other case
+   */
+  public String getOutput() {
+    if (writer instanceof StringWriter) {
+      return writer.toString();
+    } else {
+      return null;
+    }
   }
 }
