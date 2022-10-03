@@ -36,4 +36,15 @@ public class Toolbox {
   public String t(final String key, final List<Object> args) {
     return translations.resolve(key, args.toArray());
   }
+
+  /**
+   * Resolve translation for a key which contains placeholders going to be replaced with the array parameter.
+   * @param key the key of the translation. Must not be <code>null</code>
+   * @param args the arguments passed to the template resolved by the key
+   * @return the resolved translation or a placeholder
+   * @see TranslationResolver#resolve(String, Object...)
+   */
+  public String t(final String key, final Object... args) {
+    return translations.resolve(key, args);
+  }
 }
