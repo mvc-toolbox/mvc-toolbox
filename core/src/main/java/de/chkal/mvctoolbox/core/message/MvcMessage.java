@@ -193,4 +193,9 @@ public class MvcMessage implements Serializable {
   public int hashCode() {
     return Objects.hash(severity, param, text);
   }
+
+  @Override
+  public String toString() {
+    return getText();
+  }
 }
