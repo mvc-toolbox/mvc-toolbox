@@ -21,7 +21,8 @@ public class MvcMessage implements Serializable {
   public enum Severity {
     INFO,
     WARNING,
-    ERROR
+    ERROR,
+    SUCCESS;
   }
 
   private final Severity severity;
@@ -89,6 +90,27 @@ public class MvcMessage implements Serializable {
    */
   public static MvcMessage error(String param, String text) {
     return new MvcMessage(Severity.ERROR, param, text);
+  }
+
+  /**
+   * Creates a new global success message.
+   *
+   * @param text the text to be displayed
+   * @return a new {@link MvcMessage} instance
+   */
+  public static MvcMessage success(final String text) {
+    return new MvcMessage(Severity.SUCCESS, text);
+  }
+
+  /**
+   * Creates a new success message referring to the given parameter.
+   *
+   * @param param The name of parameter this message refers to or null
+   * @param text  The text of the message, must not be null
+   * @return a new {@link MvcMessage} instance
+   */
+  public static MvcMessage success(String param, String text) {
+    return new MvcMessage(Severity.SUCCESS, param, text);
   }
 
   /**
