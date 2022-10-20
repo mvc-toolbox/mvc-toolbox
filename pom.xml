@@ -17,7 +17,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-    <jakartaee-platform.version>9.1.0</jakartaee-platform.version>
+    <jakartaee-platform.version>10.0.0</jakartaee-platform.version>
 
     <annotation-api.version>2.1.1</annotation-api.version>
 
@@ -28,8 +28,8 @@
     <jaxrs.spec.version>3.0.0</jaxrs.spec.version>
     <jersey.version>3.0.5</jersey.version>
 
-    <mvc.spec.version>2.0.0</mvc.spec.version>
-    <krazo.version>2.0.1</krazo.version>
+    <mvc.spec.version>2.1.0</mvc.spec.version>
+    <krazo.version>3.0.1</krazo.version>
 
     <validation.spec.version>3.0.2</validation.spec.version>
     <hibernate.validator.version>5.2.1.Final</hibernate.validator.version>
