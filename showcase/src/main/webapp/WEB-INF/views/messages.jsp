@@ -13,8 +13,10 @@
 
       <h1>Message support</h1>
 
-      <t:messages grouping="true" class="list-unstyled alert" infoClass="alert-success"
-                   warningClass="alert-warning" errorClass="alert-danger"/>
+        <p>
+            This showcase demonstrates how different approaches to receive <code>MvcMessage</code>
+            can be used.
+        </p>
 
       <t:form action="/messages" method="POST">
         <button type="submit" class="btn btn-primary">Show me some messages!</button>
