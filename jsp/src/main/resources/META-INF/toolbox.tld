@@ -152,4 +152,25 @@
     <tag-class>de.chkal.mvctoolbox.jsp.tag.CsrfTag</tag-class>
     <body-content>empty</body-content>
   </tag>
+
+  <tag>
+    <description>Tag for overwriting the HTTP method to PUT.</description>
+    <name>methodPut</name>
+    <tag-class>de.chkal.mvctoolbox.jsp.tag.httpmethod.PutFormMethodOverwriteTag</tag-class>
+    <body-content>empty</body-content>
+  </tag>
+
+  <tag>
+    <description>Tag for overwriting the HTTP method to PATCH.</description>
+    <name>methodPatch</name>
+    <tag-class>de.chkal.mvctoolbox.jsp.tag.httpmethod.PatchFormMethodOverwriteTag</tag-class>
+    <body-content>empty</body-content>
+  </tag>
+
+  <tag>
+    <description>Tag for overwriting the HTTP method to DELETE.</description>
+    <name>methodDelete</name>
+    <tag-class>de.chkal.mvctoolbox.jsp.tag.httpmethod.DeleteFormMethodOverwriteTag</tag-class>
+    <body-content>empty</body-content>
+  </tag>
 </taglib>
