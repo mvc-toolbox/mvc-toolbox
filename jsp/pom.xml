@@ -41,6 +41,11 @@
     </dependency>
 
     <dependency>
+      <groupId>jakarta.ws.rs</groupId>
+      <artifactId>jakarta.ws.rs-api</artifactId>
+    </dependency>
+
+    <dependency>
       <groupId>de.chkal.mvc-toolbox</groupId>
       <artifactId>mvc-toolbox-core</artifactId>
       <version>${project.version}</version>
