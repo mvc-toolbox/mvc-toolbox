@@ -1,5 +1,6 @@
 package de.chkal.mvctoolbox.core.message;
 
+import de.chkal.mvctoolbox.core.message.MvcMessage.Severity;
 import jakarta.mvc.RedirectScoped;
 import jakarta.mvc.binding.BindingResult;
 import java.io.Serializable;
@@ -68,6 +69,12 @@ public class MvcMessagesImpl implements Serializable, MvcMessages {
   public List<MvcMessage> getErrors() {
     return messages.stream()
         .filter(m -> m.getSeverity() == MvcMessage.Severity.ERROR)
+        .collect(Collectors.toList());
+  }
+
+  @Override
+  public List<MvcMessage> getSuccesses() {
+    return messages.stream().filter(m -> m.getSeverity() == Severity.SUCCESS)
         .collect(Collectors.toList());
   }
 

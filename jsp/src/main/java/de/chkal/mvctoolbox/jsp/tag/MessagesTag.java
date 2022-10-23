@@ -14,6 +14,8 @@ public class MessagesTag extends DynamicBaseTag {
 
   private boolean grouping;
 
+  private String successClass;
+
   private String infoClass;
 
   private String warningClass;
@@ -28,6 +30,7 @@ public class MessagesTag extends DynamicBaseTag {
     MvcMessages messages = getBean(MvcMessages.class);
 
     if (grouping) {
+      renderList(writer, messages.getSuccesses(), successClass, false);
       renderList(writer, messages.getInfos(), infoClass, false);
       renderList(writer, messages.getWarnings(), warningClass, false);
       renderList(writer, messages.getErrors(), errorClass, false);
@@ -80,6 +83,8 @@ public class MessagesTag extends DynamicBaseTag {
         return warningClass;
       case ERROR:
         return errorClass;
+      case SUCCESS:
+        return successClass;
     }
     return null;
   }
@@ -100,4 +105,7 @@ public class MessagesTag extends DynamicBaseTag {
     this.errorClass = errorClass;
   }
 
+  public void setSuccessClass(String successClass) {
+    this.successClass = successClass;
+  }
 }

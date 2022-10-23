@@ -170,7 +170,7 @@
                         <artifactId>cargo-maven3-plugin</artifactId>
                         <configuration>
                             <containerId>tomcat10x</containerId>
-                            <containerUrl>https://dlcdn.apache.org/tomcat/tomcat-10/v10.0.23/bin/apache-tomcat-10.0.23.zip</containerUrl>
+                            <containerUrl>https://archive.apache.org/dist/tomcat/tomcat-10/v10.0.23/bin/apache-tomcat-10.0.23.zip</containerUrl>
                         </configuration>
                     </plugin>
                 </plugins>

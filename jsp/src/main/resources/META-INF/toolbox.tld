@@ -21,6 +21,12 @@
       <rtexprvalue>true</rtexprvalue>
     </attribute>
     <attribute>
+      <description>In grouping mode this class is added to the list containing success messages</description>
+      <name>successClass</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
       <description>In grouping mode this class is added to the list containing info messages</description>
       <name>infoClass</name>
       <required>false</required>

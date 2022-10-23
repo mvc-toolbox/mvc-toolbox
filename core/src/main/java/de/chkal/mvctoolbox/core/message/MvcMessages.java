@@ -74,6 +74,13 @@ public interface MvcMessages {
   List<MvcMessage> getErrors();
 
   /**
+   * Returns a list of all messages with a severity of SUCCESS.
+   *
+   * @return all success messages
+   */
+  List<MvcMessage> getSuccesses();
+
+  /**
    * If there is at least one message queued for the given parameter,
    * the first one is returned. Will return <code>null</code> if no message for the parameter
    * exists.
