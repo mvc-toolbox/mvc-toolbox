@@ -58,6 +58,11 @@
       <required>true</required>
       <rtexprvalue>true</rtexprvalue>
     </attribute>
+    <attribute>
+      <description>The HTTP method to use. Supports PUT, PATCH and DELETE.</description>
+      <name>method</name>
+      <required>false</required>
+    </attribute>
     <dynamic-attributes>true</dynamic-attributes>
   </tag>
 

@@ -26,27 +26,63 @@
         </div>
     </t:form>
 
-    <h2>PUT form</h2>
+    <h2>PUT form with manually added &lt;t:methodPut&gt; tag</h2>
     <t:form action="/form-method-overwrite" method="POST" class="form-horizontal">
         <t:methodPut/>
         <div class="col-sm-offset-2 col-sm-10">
-            <button type="submit" class="btn btn-success">Submit POST</button>
+            <button type="submit" class="btn btn-success">Submit PUT</button>
         </div>
     </t:form>
 
-    <h2>PATCH form</h2>
+    <h2>PUT form with automatically added &lt;t:methodPut&gt; tag</h2>
+    <p class="alert">
+        You can achieve this by setting the method to <code>PUT</code> inside
+        the &lt;t:form method /&gt; attribute. The tag will manage to set HTML compliant
+        values and the necessary form method overwrite tag.
+    </p>
+    <t:form action="/form-method-overwrite" method="PUT" class="form-horizontal">
+        <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-success">Submit PUT</button>
+        </div>
+    </t:form>
+
+    <h2>PATCH form with manually added &lt;t:methodPatch&gt; tag</h2>
     <t:form action="/form-method-overwrite" method="POST" class="form-horizontal">
         <t:methodPatch/>
         <div class="col-sm-offset-2 col-sm-10">
-            <button type="submit" class="btn btn-success">Submit POST</button>
+            <button type="submit" class="btn btn-success">Submit PATCH</button>
         </div>
     </t:form>
 
-    <h2>DELETE form</h2>
+    <h2>PATCH form with automatically added &lt;t:methodPatch&gt; tag</h2>
+    <p class="alert">
+        You can achieve this by setting the method to <code>PATCH</code> inside
+        the &lt;t:form method /&gt; attribute. The tag will manage to set HTML compliant
+        values and the necessary form method overwrite tag.
+    </p>
+    <t:form action="/form-method-overwrite" method="PATCH" class="form-horizontal">
+        <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-success">Submit PATCH</button>
+        </div>
+    </t:form>
+
+    <h2>DELETE form with manually added &lt;t:methodDelete&gt; tag</h2>
     <t:form action="/form-method-overwrite" method="POST" class="form-horizontal">
         <t:methodDelete/>
         <div class="col-sm-offset-2 col-sm-10">
-            <button type="submit" class="btn btn-success">Submit POST</button>
+            <button type="submit" class="btn btn-success">Submit DELETE</button>
+        </div>
+    </t:form>
+
+    <h2>DELETE form with automatically added &lt;t:methodDelete&gt; tag</h2>
+    <p class="alert">
+        You can achieve this by setting the method to <code>DELETE</code> inside
+        the &lt;t:form method /&gt; attribute. The tag will manage to set HTML compliant
+        values and the necessary form method overwrite tag.
+    </p>
+    <t:form action="/form-method-overwrite" method="DELETE" class="form-horizontal">
+        <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-success">Submit DELETE</button>
         </div>
     </t:form>
 

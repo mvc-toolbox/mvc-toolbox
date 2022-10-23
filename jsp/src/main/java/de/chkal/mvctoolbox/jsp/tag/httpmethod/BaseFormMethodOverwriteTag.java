@@ -2,11 +2,13 @@ package de.chkal.mvctoolbox.jsp.tag.httpmethod;
 
 import de.chkal.mvctoolbox.jsp.BaseTag;
 import de.chkal.mvctoolbox.jsp.HtmlWriter;
+import de.chkal.mvctoolbox.jsp.tag.DoTagWithWriterSupporting;
 import jakarta.mvc.MvcContext;
 import jakarta.mvc.form.FormMethodOverwriter;
 import java.io.IOException;
 
-public abstract class BaseFormMethodOverwriteTag extends BaseTag {
+public abstract class BaseFormMethodOverwriteTag extends BaseTag implements
+    DoTagWithWriterSupporting {
 
   static class Delegate {
 
@@ -38,9 +40,17 @@ public abstract class BaseFormMethodOverwriteTag extends BaseTag {
   @Override
   public void doTag() throws IOException {
     final HtmlWriter writer = new HtmlWriter(getJspContext());
+
+    doTagWithWriter(writer);
+  }
+
+  @Override
+  public String doTagWithWriter(final HtmlWriter writer) throws IOException {
     final MvcContext mvcContext = getBean(MvcContext.class);
 
     new Delegate(getFieldName(mvcContext), method, writer).run();
+
+    return writer.getOutput();
   }
 
   private String getFieldName(final MvcContext mvcContext) {
